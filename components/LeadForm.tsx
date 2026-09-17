@@ -22,11 +22,11 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result?.message || "Could not send your request.");
+      if (!response.ok) throw new Error(result?.message || "We could not send your inquiry.");
       form.reset();
-      setStatus("Thank you. Whitney will follow up with you directly.");
+      setStatus("Thank you. Whitney will be in touch with you directly.");
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Could not send your request.";
+      const message = error instanceof Error ? error.message : "We could not send your inquiry.";
       setStatus(`${message} You can also call ${site.phone} or email ${site.email}.`);
     } finally {
       setSending(false);
@@ -36,8 +36,8 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   return (
     <form className={`lead-form ${compact ? "lead-form--compact" : ""}`} onSubmit={submit}>
       <div className="form-intro">
-        <span>Project inquiry</span>
-        <strong>Tell us where the project stands today.</strong>
+        <span>New home inquiry</span>
+        <strong>Tell us a little about what you are planning.</strong>
       </div>
 
       <div className="form-honeypot" aria-hidden="true">
@@ -51,20 +51,20 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
 
       <div className="field-row">
         <label><span>Email</span><input name="email" type="email" autoComplete="email" maxLength={160} required /></label>
-        <label><span>Build location</span><input name="location" maxLength={180} placeholder="City, area, or property location" /></label>
+        <label><span>Build location</span><input name="location" maxLength={180} placeholder="City, neighborhood, or property location" /></label>
       </div>
 
       <div className="field-row">
         <label>
-          <span>Project investment</span>
+          <span>Approximate investment</span>
           <select name="investment" defaultValue="">
             <option value="" disabled>Select a range</option>
-            <option>$450K–$750K</option>
-            <option>$750K–$1M</option>
-            <option>$1M–$2M</option>
-            <option>$2M–$4M</option>
+            <option>$650K–$1M</option>
+            <option>$1M–$1.5M</option>
+            <option>$1.5M–$2.5M</option>
+            <option>$2.5M–$4M</option>
             <option>$4M+</option>
-            <option>Still defining</option>
+            <option>Still deciding</option>
           </select>
         </label>
         <label>
@@ -74,29 +74,29 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
             <option>We own the property</option>
             <option>We are under contract</option>
             <option>We are looking for land</option>
-            <option>Still deciding</option>
+            <option>We have not started looking yet</option>
           </select>
         </label>
       </div>
 
       <div className="field-row">
         <label>
-          <span>Preferred timing</span>
+          <span>When are you hoping to build?</span>
           <select name="timeline" defaultValue="">
             <option value="" disabled>Select one</option>
             <option>As soon as the project is ready</option>
             <option>Within 6 months</option>
             <option>6–12 months</option>
             <option>12+ months</option>
-            <option>Still planning</option>
+            <option>We are still planning</option>
           </select>
         </label>
-        <div className="form-note">Plans, inspiration, property details, and a general budget range are all useful starting points.</div>
+        <div className="form-note">Have plans, inspiration photos, or property details already? Mention them below and Whitney can follow up from there.</div>
       </div>
 
       <label>
-        <span>Project details</span>
-        <textarea name="project" maxLength={3000} rows={compact ? 4 : 6} placeholder="Tell us about the home, property, architectural direction, or plans you already have." />
+        <span>Tell us about the home</span>
+        <textarea name="project" maxLength={3000} rows={compact ? 4 : 6} placeholder="Share anything that would be helpful: size, style, must-have spaces, property details, plans, or what you want the finished home to feel like." />
       </label>
 
       <label className="consent-row">
@@ -105,8 +105,8 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       </label>
 
       <div className="form-actions">
-        <button type="submit" disabled={sending}>{sending ? "Sending…" : "Request a consultation"}</button>
-        <span>New inquiries go directly to Whitney.</span>
+        <button type="submit" disabled={sending}>{sending ? "Sending…" : "Send my inquiry"}</button>
+        <span>Your inquiry goes directly to Whitney.</span>
       </div>
       {status ? <p className="form-status" role="status" aria-live="polite">{status}</p> : null}
     </form>

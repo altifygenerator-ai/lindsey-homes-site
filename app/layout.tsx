@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./gallery.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
@@ -7,20 +8,20 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: "Lindsey Homes | Luxury Custom Homes in North Texas",
+    default: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
     template: "%s | Lindsey Homes",
   },
-  description: "Lindsey Homes builds fully custom residences, private estate homes, and build-to-suit residential projects across North Texas.",
+  description: "Lindsey Homes builds custom residences and private estate homes across Dallas–Fort Worth, from thoughtfully designed custom homes to multi-million-dollar estate properties.",
   openGraph: {
-    title: "Lindsey Homes | Luxury Custom Homes in North Texas",
-    description: "Custom residences, private estate homes, and build-to-suit projects across North Texas.",
+    title: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
+    description: "Custom residences and private estate homes across Dallas–Fort Worth.",
     type: "website",
     images: [site.logo],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lindsey Homes | Luxury Custom Homes in North Texas",
-    description: "Custom residences, private estate homes, and build-to-suit projects across North Texas.",
+    title: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
+    description: "Custom residences and private estate homes across Dallas–Fort Worth.",
     images: [site.logo],
   },
   icons: {
@@ -43,8 +44,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: site.siteUrl,
     telephone: site.phone,
     email: site.email,
-    areaServed: "North Texas",
-    description: "Custom residential home builder serving North Texas.",
+    areaServed: "Dallas–Fort Worth, Texas",
+    description: "Custom residential home builder serving Dallas–Fort Worth, Texas.",
   };
 
   return (

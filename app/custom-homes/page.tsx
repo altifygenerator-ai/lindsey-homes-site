@@ -6,8 +6,8 @@ import { ContactBand } from "@/components/ContactBand";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "Custom Homes",
-  description: "Custom residences, estate homes, land + build-to-suit opportunities, and select residential projects by Lindsey Homes in North Texas.",
+  title: "Luxury Custom Homes in Dallas–Fort Worth",
+  description: "Custom homes, private estates, and build-on-your-land residences by Lindsey Homes across Dallas–Fort Worth.",
 };
 
 export default function CustomHomesPage() {
@@ -17,18 +17,18 @@ export default function CustomHomesPage() {
         <div className="shell page-hero-grid">
           <div>
             <span className="eyebrow eyebrow-light">Custom Homes</span>
-            <h1>Residential work shaped around the property, not a preset package.</h1>
-            <p>Every custom project brings its own site, scale, architecture, finish level, and priorities. Lindsey Homes starts there and builds the project around those realities.</p>
-            <Link className="text-link-light" href="/contact">Request a consultation →</Link>
+            <h1>A home designed around your property and the way you want to live.</h1>
+            <p>Whether you are planning a custom family home or a larger private estate, Lindsey Homes starts with the site, the spaces that matter to you, and the level of finish you want to come home to every day.</p>
+            <Link className="text-link-light" href="/contact">Start a conversation →</Link>
           </div>
-          <ImageSlot className="page-hero-image" src={photos.highEndExterior.src} alt={photos.highEndExterior.alt} loading="eager" showLabel={false} />
+          <ImageSlot className="page-hero-image" src={photos.reserveDriveway.src} alt={photos.reserveDriveway.alt} loading="eager" showLabel={false} />
         </div>
       </section>
 
       <section className="build-detail shell section-space">
         <div className="build-detail-intro">
-          <span className="eyebrow">Residential capabilities</span>
-          <h2>From private homes to larger estate-scale projects.</h2>
+          <span className="eyebrow">What we build</span>
+          <h2>From a custom home to a complete estate property.</h2>
         </div>
         <div className="spectrum-list spectrum-list--page">
           {buildTypes.map((item) => (
@@ -42,36 +42,36 @@ export default function CustomHomesPage() {
 
       <section className="dark-editorial-section">
         <div className="shell dark-editorial-grid">
-          <ImageSlot aspect="portrait" src={photos.suspendedFireplace.src} alt={photos.suspendedFireplace.alt} showLabel={false} />
+          <ImageSlot aspect="portrait" src={photos.reserveKitchen.src} alt={photos.reserveKitchen.alt} showLabel={false} />
           <div>
-            <span className="eyebrow eyebrow-light">The finished home</span>
-            <h2>Architecture and finish should read as one decision.</h2>
-            <p>Floor plan, ceiling volume, natural light, materials, interior detailing, exterior character, and outdoor spaces all affect how the home feels. Treating those pieces separately is how custom homes start to feel generic.</p>
-            <p>Lindsey Homes keeps those decisions connected as the project develops.</p>
+            <span className="eyebrow eyebrow-light">Inside the home</span>
+            <h2>Good design does not need every finish to compete for attention.</h2>
+            <p>The rooms that feel most luxurious usually have a sense of balance. The stone, cabinetry, lighting, hardware, ceiling height, windows, and furnishings all have a place, and none of them has to carry the room alone.</p>
+            <p>We bring that same thinking to the exterior, the landscape, and the way the home sits on the property.</p>
           </div>
         </div>
       </section>
 
       <section className="experience-section shell section-space">
         <div className="experience-title">
-          <span className="eyebrow">How the work moves</span>
-          <h2>The process should stay clear even when the project is complex.</h2>
+          <span className="eyebrow">What to expect</span>
+          <h2>A clear path from the first conversation to the finished home.</h2>
         </div>
         <div className="experience-list">
-          <div><strong>Early conversation</strong><p>Property, project scale, architectural direction, timing, and investment range.</p></div>
-          <div><strong>Site + design alignment</strong><p>Make sure the house and the property are working toward the same result.</p></div>
-          <div><strong>Selections + decisions</strong><p>Develop the details and finish level before they become last-minute choices.</p></div>
-          <div><strong>Build + completion</strong><p>Carry the design intent through the construction and finished home.</p></div>
+          <div><strong>Start with the property</strong><p>We talk through the lot, location, size of the home, investment range, timing, and the spaces that matter most to you.</p></div>
+          <div><strong>Shape the plan</strong><p>The layout and architecture are developed around the site and your priorities instead of forcing a stock plan onto the property.</p></div>
+          <div><strong>Choose the details</strong><p>Materials, fixtures, cabinetry, lighting, and finishes are worked through with the overall home in mind.</p></div>
+          <div><strong>Build it well</strong><p>The goal is simple: carry the design through construction so the finished home feels like the one you set out to build.</p></div>
         </div>
       </section>
 
       <section className="investment-band">
         <div className="shell investment-band-grid">
           <div>
-            <span className="eyebrow eyebrow-light">Project scale</span>
-            <h2>Custom residential projects from approximately $450K through $4M+ estates.</h2>
+            <span className="eyebrow eyebrow-light">Investment</span>
+            <h2>Custom homes beginning around $650K, with estate properties extending well into the millions.</h2>
           </div>
-          <p>Final pricing depends on the actual residence, property, site work, square footage, architecture, selections, finish level, location, and current material costs.</p>
+          <p>Final pricing depends on the home, the property, square footage, architecture, site work, materials, finish selections, location, and current construction costs.</p>
         </div>
       </section>
 

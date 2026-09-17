@@ -7,9 +7,9 @@ import { site } from "@/data/site";
 
 const links = [
   ["Custom Homes", "/custom-homes"],
+  ["Residences", "/floor-plans"],
   ["Design", "/inspiration"],
-  ["Floor Plans", "/floor-plans"],
-  ["Company", "/about"],
+  ["Approach", "/about"],
   ["Contact", "/contact"],
 ] as const;
 
@@ -19,13 +19,13 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="masthead-meta shell">
-        <span>North Texas</span>
-        <span>Custom Residential Building</span>
+        <span>Dallas–Fort Worth</span>
+        <span>Luxury Custom Homes</span>
       </div>
 
       <div className="masthead-main shell">
         <Link className="brand-panel" href="/" aria-label="Lindsey Homes home">
-          <Image src={site.logo} alt="Lindsey Homes LLC" width={150} height={150} priority />
+          <Image src={site.logo} alt="Lindsey Homes" width={150} height={150} priority />
         </Link>
 
         <nav id="primary-navigation" className={`primary-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation">
@@ -35,7 +35,7 @@ export function Header() {
         </nav>
 
         <div className="masthead-contact">
-          <Link href="/contact">Request a consultation</Link>
+          <Link href="/contact">Start a conversation</Link>
           <a href={site.phoneHref}>{site.phone}</a>
         </div>
 

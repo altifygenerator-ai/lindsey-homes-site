@@ -2,7 +2,7 @@ export const site = {
   name: "Lindsey Homes LLC",
   shortName: "Lindsey Homes",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.lindseyhomes.com",
-  region: "North Texas",
+  region: "Dallas–Fort Worth",
   phone: "817-821-2476",
   phoneHref: "tel:+18178212476",
   email: "whitney@lindseyhomesllc.com",
@@ -13,59 +13,48 @@ export const site = {
 
 export const buildTypes = [
   {
-    title: "Fully custom residences",
-    copy: "Homes planned around the property, architectural direction, finish level, and the way the client intends to use the space.",
+    title: "Custom residences",
+    copy: "A home designed around your property, your priorities, and the way you want the spaces to work every day.",
   },
   {
     title: "Private estate homes",
-    copy: "Larger residential projects where the home, land, outdoor living, and long-term use of the property are considered together.",
+    copy: "Larger properties where the main residence, guest spaces, outdoor living, landscape, and arrival are planned together from the start.",
   },
   {
-    title: "Land + build-to-suit",
-    copy: "For clients who are still putting the property and the residence together, Lindsey Homes can help bring the site and build into one conversation.",
+    title: "Build on your land",
+    copy: "Already have a property in Dallas–Fort Worth? We can begin with the land and shape the home around what makes that site work best.",
   },
   {
-    title: "Design-forward spec residences",
-    copy: "Select homes developed with a clear architectural point of view, thoughtful materials, and a finished look that feels intentional from the start.",
-  },
-  {
-    title: "Investment + development projects",
-    copy: "Select residential opportunities where construction, land, and long-term value need to be considered as one project.",
+    title: "Design-forward residences",
+    copy: "Homes with a clear architectural point of view, thoughtful materials, and interiors that feel polished without feeling overdone.",
   },
 ];
 
 export const budgetBands = [
+  { range: "$650K+", label: "Custom residences", note: "A starting point for a fully custom home, with final cost shaped by the property, size, architecture, site work, and finish selections." },
+  { range: "$1M+", label: "High-end custom homes", note: "More room for architectural detail, specialty spaces, premium materials, and expanded indoor-outdoor living." },
+  { range: "$1.5M+", label: "Luxury residences", note: "Larger custom homes with a deeper level of architectural, interior, and finish detail." },
+  { range: "$2M+", label: "Estate residences", note: "Estate-scale homes with substantial finish packages, outdoor living, and more involved site planning." },
+  { range: "$2.5M+", label: "Private estates", note: "Highly tailored properties where the home, guest spaces, landscape, and amenities are designed as one complete estate." },
+  { range: "$4M+", label: "Signature estates", note: "One-of-a-kind projects shaped around the property, architecture, lifestyle, and long-term vision of the owner." },
+];
+
+export const residenceCollection = [
   {
-    range: "$450K–$600K",
-    label: "Custom residences",
-    note: "Thoughtful custom homes shaped around the property, floor plan, finish priorities, and overall design direction.",
-  },
-  {
-    range: "$600K–$800K",
-    label: "Elevated custom residences",
-    note: "More room for architectural detail, upgraded materials, tailored interior selections, and stronger indoor-outdoor living.",
-  },
-  {
-    range: "$800K–$1M",
-    label: "High-end custom residences",
-    note: "Larger custom programs with deeper architectural detailing, premium finishes, and a broader mix of specialty spaces.",
-  },
-  {
-    range: "$1M–$2M",
-    label: "Luxury residences",
-    note: "Distinctive homes where architecture, materials, interior detailing, entertaining spaces, and the site are developed together.",
-  },
-  {
-    range: "$2M–$3M",
-    label: "Luxury estate residences",
-    note: "Estate-scale projects with highly tailored layouts, substantial finish packages, outdoor living, and a more involved design and build process.",
-  },
-  {
-    range: "$3M–$4M+",
-    label: "Private custom estates",
-    note: "Highly individualized residential projects shaped around the property, architecture, lifestyle, and long-term vision of the client.",
+    slug: "the-reserve",
+    name: "The Reserve",
+    startingAt: "Starting at $2.5M+",
+    status: "Featured residence",
+    totalSqFt: "6,890 sq. ft.",
+    mainResidence: "5,842 sq. ft.",
+    guestHouse: "1,048 sq. ft.",
+    bedrooms: "6 bedrooms",
+    fullBaths: "6 full bathrooms",
+    halfBaths: "2 half bathrooms",
+    garage: "5-car garage",
+    amenities: ["Guest house / in-law suite", "Two pools", "Outdoor living", "Study", "Game room", "Media room"],
   },
 ];
 
 export const imageDisclaimer =
-  "Images shown are licensed design inspiration and may not represent homes previously built by Lindsey Homes. Final pricing varies based on square footage, architecture, selections, finish level, site conditions, location, material costs, and other project-specific factors.";
+  "The Reserve imagery and plan shown here are original design concepts for the residence, not photographs of a completed Lindsey Homes project. Other residential images used for design inspiration are reference photography and are not presented as completed Lindsey Homes work. Final plans and pricing will depend on the property, engineering, square footage, site conditions, selections, materials, location, and other project-specific details.";

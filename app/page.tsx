@@ -2,34 +2,35 @@ import Link from "next/link";
 import { ImageSlot } from "@/components/ImageSlot";
 import { LeadForm } from "@/components/LeadForm";
 import { ContactBand } from "@/components/ContactBand";
-import { buildTypes, imageDisclaimer, site } from "@/data/site";
+import { HeroGallery } from "@/components/HeroGallery";
+import { imageDisclaimer, residenceCollection, site } from "@/data/site";
 import { photos } from "@/data/photos";
 
 export default function HomePage() {
+  const reserve = residenceCollection[0];
+
   return (
     <>
-      <section className="hero luxury-hero">
-        <div className="shell hero-grid">
-          <div className="hero-copy">
-            <p className="hero-kicker">North Texas Custom Residential</p>
-            <h1>Custom homes with the presence, detail, and finish the property deserves.</h1>
-            <p className="hero-lead">Lindsey Homes builds fully custom residences, private estate homes, and build-to-suit projects across North Texas. Every project begins with the site, the architecture, and the level of finish expected from the completed home.</p>
+      <section className="hero-gallery-shell">
+        <HeroGallery
+          slides={[
+            { src: photos.dallasSkyline.src, alt: photos.dallasSkyline.alt, position: "center 48%" },
+            { src: photos.reserveFront.src, alt: photos.reserveFront.alt, position: "center 54%" },
+            { src: photos.reservePool.src, alt: photos.reservePool.alt, position: "center 54%" },
+            { src: photos.reserveOutdoor.src, alt: photos.reserveOutdoor.alt, position: "center 52%" },
+            { src: photos.dallasStone.src, alt: photos.dallasStone.alt, position: "center" },
+          ]}
+        />
+        <div className="shell hero-gallery-content">
+          <div className="hero-gallery-copy">
+            <p className="hero-kicker">Custom Homes · Dallas–Fort Worth</p>
+            <h1>A home should feel considered from the first look to the last detail.</h1>
+            <p className="hero-lead">
+              Lindsey Homes builds custom residences and private estates across Dallas–Fort Worth, with each home shaped around the property, the architecture, and the way you want to live.
+            </p>
             <div className="hero-actions">
-              <Link className="button-gold" href="/contact">Request a consultation</Link>
-              <Link className="hero-text-link" href="/custom-homes">Explore custom homes →</Link>
-            </div>
-            <div className="hero-detail-line">
-              <span>Custom residences</span>
-              <span>Private estates</span>
-              <span>Land + build-to-suit</span>
-            </div>
-          </div>
-
-          <div className="hero-visual">
-            <ImageSlot className="hero-image" aspect="portrait" src={photos.glassPoolEstate.src} alt={photos.glassPoolEstate.alt} loading="eager" showLabel={false} />
-            <div className="hero-visual-note">
-              <span>Residential building</span>
-              <strong>North Texas</strong>
+              <Link className="button-gold" href="/contact">Start a conversation</Link>
+              <Link className="hero-text-link" href="/floor-plans">View residences →</Link>
             </div>
           </div>
         </div>
@@ -38,115 +39,99 @@ export default function HomePage() {
       <section className="editorial-intro shell section-space">
         <div className="editorial-intro-title">
           <span className="eyebrow">Lindsey Homes</span>
-          <h2>A higher standard should be visible in the details.</h2>
+          <h2>Homes with presence, without trying too hard.</h2>
         </div>
         <div className="editorial-intro-copy">
-          <p>Luxury is not one finish package or one architectural style. It is the way the property, plan, materials, proportions, and final execution work together.</p>
-          <p>Lindsey Homes approaches custom residential work as a complete project, with the home and the land considered together from the beginning.</p>
-          <Link className="text-link" href="/about">About the company →</Link>
+          <p>The best custom homes feel right as a whole. The proportions make sense. The materials belong together. The rooms flow naturally, and the details still feel good long after the first impression.</p>
+          <p>That is the standard we bring to custom homes and estate properties throughout Dallas–Fort Worth.</p>
+          <Link className="text-link" href="/custom-homes">See how we build →</Link>
         </div>
       </section>
 
       <section className="residence-showcase">
         <div className="shell residence-showcase-head">
-          <span className="eyebrow eyebrow-light">Residential work</span>
-          <h2>Built for different properties, different priorities, and different levels of scale.</h2>
+          <span className="eyebrow eyebrow-light">Featured residence</span>
+          <h2>{reserve.name} · {reserve.startingAt}</h2>
         </div>
-
         <div className="shell residence-rows">
-          {buildTypes.slice(0, 3).map((item, index) => {
-            const image = [photos.glassWoodExterior, photos.dallasStone, photos.ruralPoolAerial][index];
-            return (
-              <article className="residence-row" key={item.title}>
-                <ImageSlot className="residence-image" src={image.src} alt={image.alt} showLabel={false} />
-                <div className="residence-copy">
-                  <span>{index === 0 ? "Custom" : index === 1 ? "Estate" : "Property + build"}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
-                </div>
-              </article>
-            );
-          })}
+          <article className="residence-row">
+            <ImageSlot className="residence-image" src={photos.reserveFront.src} alt={photos.reserveFront.alt} showLabel={false} />
+            <div className="residence-copy">
+              <span>{reserve.status}</span>
+              <h3>{reserve.totalSqFt} across the main residence and guest house.</h3>
+              <p>The Reserve is designed for the way a true estate is lived in: generous gathering spaces, a separate guest residence, resort-style outdoor living, and an arrival that feels special before you ever step inside.</p>
+              <Link className="text-link-light" href="/floor-plans">Explore The Reserve →</Link>
+            </div>
+          </article>
+          <article className="residence-row">
+            <ImageSlot className="residence-image" src={photos.reservePool.src} alt={photos.reservePool.alt} showLabel={false} />
+            <div className="residence-copy">
+              <span>Outdoor living</span>
+              <h3>The backyard should feel like part of the home.</h3>
+              <p>Covered entertaining space, pools, guest accommodations, landscape, and the connection between indoors and out are planned as part of the property, not treated as an afterthought.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <section className="design-section shell section-space">
         <div className="design-heading">
-          <span className="eyebrow">Architectural direction</span>
-          <h2>Clean lines, strong materials, considered interiors, and outdoor spaces that belong to the home.</h2>
-          <p>Use the design gallery as a starting point for conversations around architecture, finish level, interior character, and the overall feel of the residence.</p>
-          <Link className="text-link" href="/inspiration">Explore design inspiration →</Link>
+          <span className="eyebrow">The details</span>
+          <h2>Beautiful rooms should still feel comfortable to live in.</h2>
+          <p>Natural stone, warm wood, strong lighting, thoughtful cabinetry, generous glass, and well-planned outdoor spaces can make a home feel elevated without making it feel staged.</p>
+          <Link className="text-link" href="/inspiration">Explore the design gallery →</Link>
         </div>
-
         <div className="luxury-mosaic">
-          <ImageSlot className="luxury-mosaic-main" src={photos.villaPool.src} alt={photos.villaPool.alt} showLabel={false} />
-          <ImageSlot src={photos.woodKitchen.src} alt={photos.woodKitchen.alt} eyebrow="Interior" title="Kitchen + gathering" />
-          <ImageSlot src={photos.luxeMarbleBath.src} alt={photos.luxeMarbleBath.alt} eyebrow="Interior" title="Primary suite" />
-          <ImageSlot className="luxury-mosaic-wide" src={photos.poolPatio.src} alt={photos.poolPatio.alt} eyebrow="Outdoor" title="Pool + exterior living" />
+          <ImageSlot className="luxury-mosaic-main" src={photos.reserveGreatRoom.src} alt={photos.reserveGreatRoom.alt} showLabel={false} />
+          <ImageSlot src={photos.reserveKitchen.src} alt={photos.reserveKitchen.alt} eyebrow="Interior" title="Kitchen" />
+          <ImageSlot src={photos.reserveBath.src} alt={photos.reserveBath.alt} eyebrow="Interior" title="Primary bath" />
+          <ImageSlot className="luxury-mosaic-wide" src={photos.reserveOutdoor.src} alt={photos.reserveOutdoor.alt} eyebrow="Outdoor" title="Covered living" />
         </div>
       </section>
 
       <section className="property-section">
         <div className="shell property-grid">
           <div className="property-image-wrap">
-            <ImageSlot className="property-image" aspect="portrait" src={photos.ruralPoolAerial.src} alt={photos.ruralPoolAerial.alt} showLabel={false} />
+            <ImageSlot className="property-image" aspect="portrait" src={photos.reserveDriveway.src} alt={photos.reserveDriveway.alt} showLabel={false} />
           </div>
           <div className="property-copy">
-            <span className="eyebrow eyebrow-light">Land + residence</span>
-            <h2>The right house starts with understanding the property.</h2>
-            <p>Access, orientation, views, outdoor living, privacy, and the way the home sits on the land all shape the final project. If the property is already secured, the conversation can start there. If not, Lindsey Homes can help bring the land and build into the same planning process.</p>
-            <Link href="/contact" className="text-link-light">Discuss a property →</Link>
+            <span className="eyebrow eyebrow-light">Built for the property</span>
+            <h2>The lot should help shape the house.</h2>
+            <p>How you approach the home, where the garage sits, what you want to see from the windows, how much privacy you want, and where outdoor living belongs all matter. Those are decisions worth getting right before the plans are finished.</p>
+            <Link href="/contact" className="text-link-light">Tell us about your property →</Link>
           </div>
-        </div>
-      </section>
-
-      <section className="experience-section shell section-space">
-        <div className="experience-title">
-          <span className="eyebrow">The build experience</span>
-          <h2>Clear decisions. Careful execution. No unnecessary noise.</h2>
-        </div>
-        <div className="experience-list">
-          <div><strong>Property + feasibility</strong><p>Start with the site, goals, project scale, and the practical decisions that affect the build.</p></div>
-          <div><strong>Architecture + direction</strong><p>Bring plans, inspiration, or an early idea and shape the residence around the property and the client.</p></div>
-          <div><strong>Selections + finish</strong><p>Develop the material and finish decisions that give the home its character and level of refinement.</p></div>
-          <div><strong>Construction + communication</strong><p>Keep the project moving with clear expectations, direct communication, and attention to the finished work.</p></div>
         </div>
       </section>
 
       <section className="floor-plan-preview">
         <div className="shell floor-plan-grid">
           <div>
-            <span className="eyebrow eyebrow-light">Floor plans</span>
-            <h2>A curated plan collection is coming soon.</h2>
-            <p>Future plans will be presented as starting points, not fixed packages. Site conditions, layout changes, finish selections, and the overall project can still shape the final home.</p>
-            <Link href="/floor-plans" className="text-link-light">Floor plan information →</Link>
+            <span className="eyebrow eyebrow-light">Residence collection</span>
+            <h2>Start with a home you love, then make it yours.</h2>
+            <p>The Reserve is the first home in the Lindsey Homes residence collection. More designs are on the way, each created as a strong starting point that can still be tailored to the property and the people who will live there.</p>
+            <Link href="/floor-plans" className="text-link-light">Explore the collection →</Link>
           </div>
-          <div className="plan-linework" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
+          <ImageSlot src={photos.reserveFloorPlan.src} alt={photos.reserveFloorPlan.alt} showLabel={false} />
         </div>
       </section>
 
       <section className="investment-section shell section-space">
         <div className="investment-statement">
-          <span className="eyebrow">Project investment</span>
-          <h2>From custom residences around $450K to estate projects above $4M.</h2>
+          <span className="eyebrow">Investment</span>
+          <h2>Custom homes from around $650K to multi-million-dollar estate properties.</h2>
         </div>
         <div className="investment-copy">
-          <p>The number is only useful when it is tied to the actual project. Square footage, architecture, land, site work, material selections, finish level, outdoor spaces, and location all affect final cost.</p>
-          <p>Use the range as a broad starting point, then let the property and scope define the real conversation.</p>
+          <p>Every home is different, and the final cost should reflect the home you actually want to build. Size, architecture, the lot, site work, materials, interior selections, outdoor spaces, and location all play a part.</p>
+          <p>If you have a budget range in mind, we can talk through what makes sense within it.</p>
           <small>{imageDisclaimer}</small>
         </div>
       </section>
 
       <section className="lead-section shell section-space">
         <div className="lead-intro">
-          <span className="eyebrow">Request a consultation</span>
-          <h2>Bring the property, the plans, or the idea you want to explore.</h2>
-          <p>Share what you know today. Whitney is the direct contact for new residential inquiries and will follow up from there.</p>
+          <span className="eyebrow">Start a conversation</span>
+          <h2>Tell us what you are thinking about building.</h2>
+          <p>You do not need to have every decision made. If you have a property, a plan, a few inspiration photos, or simply a budget and an idea, that is enough to start.</p>
           <div className="direct-contact">
             <span>{site.leadContact} · Sales</span>
             <a href={site.phoneHref}>{site.phone}</a>
