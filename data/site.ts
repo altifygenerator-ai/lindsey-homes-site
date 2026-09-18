@@ -57,4 +57,4 @@ export const residenceCollection = [
 ];
 
 export const imageDisclaimer =
-  "The Reserve imagery and plan shown here are original design concepts for the residence, not photographs of a completed Lindsey Homes project. Other residential images used for design inspiration are reference photography and are not presented as completed Lindsey Homes work. Final plans and pricing will depend on the property, engineering, square footage, site conditions, selections, materials, location, and other project-specific details.";
+  "The Reserve images and floor plan are concept visuals created for the residence, not photographs of a completed Lindsey Homes project. Final plans, specifications, and pricing will be developed for the actual property and may change with engineering, site conditions, selections, and location. Other reference photography is shown for design inspiration only.";

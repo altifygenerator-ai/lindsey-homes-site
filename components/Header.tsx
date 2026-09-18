@@ -20,7 +20,7 @@ export function Header() {
     <header className="site-header">
       <div className="masthead-meta shell">
         <span>Dallas–Fort Worth</span>
-        <span>Luxury Custom Homes</span>
+        <span>Custom Homes &amp; Private Estates</span>
       </div>
 
       <div className="masthead-main shell">
