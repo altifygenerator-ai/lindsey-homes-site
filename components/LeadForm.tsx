@@ -37,7 +37,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
     <form className={`lead-form ${compact ? "lead-form--compact" : ""}`} onSubmit={submit}>
       <div className="form-intro">
         <span>New home inquiry</span>
-        <strong>Tell us a little about what you are planning.</strong>
+        <strong>Tell us what you are planning.</strong>
       </div>
 
       <div className="form-honeypot" aria-hidden="true">
@@ -56,18 +56,6 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
 
       <div className="field-row">
         <label>
-          <span>Approximate investment</span>
-          <select name="investment" defaultValue="">
-            <option value="" disabled>Select a range</option>
-            <option>$650K–$1M</option>
-            <option>$1M–$1.5M</option>
-            <option>$1.5M–$2.5M</option>
-            <option>$2.5M–$4M</option>
-            <option>$4M+</option>
-            <option>Still deciding</option>
-          </select>
-        </label>
-        <label>
           <span>Property status</span>
           <select name="propertyStatus" defaultValue="">
             <option value="" disabled>Select one</option>
@@ -77,9 +65,6 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
             <option>We have not started looking yet</option>
           </select>
         </label>
-      </div>
-
-      <div className="field-row">
         <label>
           <span>When are you hoping to build?</span>
           <select name="timeline" defaultValue="">
@@ -91,12 +76,11 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
             <option>We are still planning</option>
           </select>
         </label>
-        <div className="form-note">Have plans, inspiration photos, or property details already? Mention them below and Whitney can follow up from there.</div>
       </div>
 
       <label>
         <span>Tell us about the home</span>
-        <textarea name="project" maxLength={3000} rows={compact ? 4 : 6} placeholder="Share anything that would be helpful: size, style, must-have spaces, property details, plans, or what you want the finished home to feel like." />
+        <textarea name="project" maxLength={3000} rows={compact ? 4 : 6} placeholder="Style, size, must-have spaces, property details, plans, or anything else you want us to know." />
       </label>
 
       <label className="consent-row">

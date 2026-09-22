@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/data/site";
 
@@ -10,22 +11,18 @@ const links = [
   ["Residences", "/floor-plans"],
   ["Design", "/inspiration"],
   ["Approach", "/about"],
-  ["Contact", "/contact"],
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const home = pathname === "/";
 
   return (
-    <header className="site-header">
-      <div className="masthead-meta shell">
-        <span>Dallas–Fort Worth</span>
-        <span>Custom Homes &amp; Private Estates</span>
-      </div>
-
+    <header className={`site-header ${home ? "site-header--hero" : ""}`}>
       <div className="masthead-main shell">
         <Link className="brand-panel" href="/" aria-label="Lindsey Homes home">
-          <Image src={site.logo} alt="Lindsey Homes" width={150} height={150} priority />
+          <Image src={site.logo} alt="Lindsey Homes" width={260} height={167} priority />
         </Link>
 
         <nav id="primary-navigation" className={`primary-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation">
@@ -34,10 +31,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="masthead-contact">
-          <Link href="/contact">Start a conversation</Link>
-          <a href={site.phoneHref}>{site.phone}</a>
-        </div>
+        <Link className="masthead-contact-button" href="/contact">Contact</Link>
 
         <button
           className="menu-button"

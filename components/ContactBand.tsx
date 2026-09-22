@@ -7,13 +7,13 @@ export function ContactBand() {
       <div className="shell contact-band-grid">
         <div>
           <span className="eyebrow eyebrow-light">Planning a custom home?</span>
-          <h2>Bring us the property, the plans, or simply the idea you want to explore.</h2>
+          <h2>Start with a conversation.</h2>
         </div>
         <div className="contact-band-details">
           <span>{site.leadContact} · Sales</span>
           <a href={site.phoneHref}>{site.phone}</a>
-          <a href={site.emailHref}>{site.email}</a>
-          <Link href="/contact">Start a conversation →</Link>
+          <a href={`sms:+18178212476`}>Text Whitney</a>
+          <Link href="/contact">Send project details →</Link>
         </div>
       </div>
     </section>

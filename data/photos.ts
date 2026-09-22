@@ -19,39 +19,81 @@ const local = (id: string, file: string, alt: string, label: string): StockPhoto
   sourcePage: "",
 });
 
+const stock = (id: string, alt: string, label: string, photographer: string, sourcePage: string): StockPhoto => ({
+  id,
+  src: pexels(id),
+  alt,
+  label,
+  photographer,
+  sourcePage,
+});
+
 export const photos: Record<string, StockPhoto> = {
-  dallasSkyline: {
-    id: "18061788",
-    src: pexels("18061788"),
-    alt: "Downtown Dallas skyline illuminated at sunset with Reunion Tower",
-    label: "Dallas–Fort Worth",
-    photographer: "Ricardo Olvera",
-    sourcePage: "https://www.pexels.com/photo/sunset-in-dallas-18061788/",
-  },
-  dallasStone: {
-    id: "23930020",
-    src: pexels("23930020"),
-    alt: "Stone residence in Dallas, Texas with traditional architectural detailing",
-    label: "Dallas residential reference",
-    photographer: "Nuray",
-    sourcePage: "https://www.pexels.com/photo/mansion-with-stone-fence-23930020/",
-  },
-  dallasMediterranean: {
-    id: "23928929",
-    src: pexels("23928929"),
-    alt: "Stone Mediterranean-style residence in Dallas, Texas",
-    label: "Dallas residential reference",
-    photographer: "Nuray",
-    sourcePage: "https://www.pexels.com/photo/view-on-a-mansion-23928929/",
-  },
-  dallasEntryDetail: {
-    id: "21953233",
-    src: pexels("21953233"),
-    alt: "Stone residential entry with architectural lighting in Dallas, Texas",
-    label: "Dallas architectural detail",
-    photographer: "Nuray",
-    sourcePage: "https://www.pexels.com/photo/vintage-lamps-on-stone-building-wall-21953233/",
-  },
+  dallasSkyline: stock(
+    "18061788",
+    "Downtown Dallas skyline illuminated at sunset with Reunion Tower",
+    "Dallas–Fort Worth",
+    "Ricardo Olvera",
+    "https://www.pexels.com/photo/sunset-in-dallas-18061788/"
+  ),
+  dallasStone: stock(
+    "23930020",
+    "Stone residence in Dallas, Texas with traditional architectural detailing",
+    "Dallas residential reference",
+    "Nuray",
+    "https://www.pexels.com/photo/mansion-with-stone-fence-23930020/"
+  ),
+  dallasMediterranean: stock(
+    "23928929",
+    "Stone Mediterranean-style residence in Dallas, Texas",
+    "Dallas residential reference",
+    "Nuray",
+    "https://www.pexels.com/photo/view-on-a-mansion-23928929/"
+  ),
+  dallasEntryDetail: stock(
+    "21953233",
+    "Stone residential entry with architectural lighting in Dallas, Texas",
+    "Dallas architectural detail",
+    "Nuray",
+    "https://www.pexels.com/photo/vintage-lamps-on-stone-building-wall-21953233/"
+  ),
+
+  luxuryExterior: stock(
+    "8134821",
+    "Contemporary luxury home exterior with a landscaped drive",
+    "Luxury homes",
+    "Max Vakhtbovych",
+    "https://www.pexels.com/photo/modern-house-exterior-design-8134821/"
+  ),
+  luxuryLiving: stock(
+    "32025967",
+    "Luxury open-concept living room and kitchen with natural light",
+    "Interiors",
+    "Christopher Moon",
+    "https://www.pexels.com/photo/luxury-modern-kitchen-and-living-room-interior-design-32025967/"
+  ),
+  luxuryKitchen: stock(
+    "8146212",
+    "Elegant modern kitchen with marble surfaces and refined finishes",
+    "Kitchens",
+    "Max Vakhtbovych",
+    "https://www.pexels.com/photo/modern-kitchen-interior-design-with-tiles-8146212/"
+  ),
+  luxuryBath: stock(
+    "7031572",
+    "Spacious modern luxury bathroom with clean architectural lines",
+    "Bathrooms",
+    "Max Vakhtbovych",
+    "https://www.pexels.com/photo/luxury-modern-home-bathroom-interior-7031572/"
+  ),
+  luxuryOutdoor: stock(
+    "28586202",
+    "Modern luxury home with glass facade and pool",
+    "Outdoor living",
+    "Jonathan Borba",
+    "https://www.pexels.com/photo/modern-luxury-home-with-glass-facade-and-pool-28586202/"
+  ),
+
   reserveFront: local("reserve-front", "reserve-front-evening.webp", "The Reserve concept residence exterior at sunset", "The Reserve"),
   reservePool: local("reserve-pool", "reserve-pool-estate.webp", "The Reserve concept residence pool and backyard", "Pool + outdoor living"),
   reserveEntry: local("reserve-entry", "reserve-entry.webp", "The Reserve concept residence entry", "Arrival"),
@@ -67,12 +109,11 @@ export const photos: Record<string, StockPhoto> = {
 };
 
 export const budgetPhotos: StockPhoto[][] = [
-  [photos.dallasStone, photos.dallasMediterranean, photos.dallasEntryDetail, photos.reserveGuest],
-  [photos.reserveGuest, photos.reserveKitchen, photos.reserveBath, photos.reserveGreatRoom],
-  [photos.reserveFront, photos.reserveKitchen, photos.reserveEntry, photos.reserveGreatRoom],
-  [photos.reserveDriveway, photos.reservePool, photos.reserveBath, photos.reserveOutdoor],
-  [photos.reserveWide, photos.reservePool, photos.reserveEntry, photos.reserveKitchen],
-  [photos.reserveFront, photos.reservePool, photos.reserveOutdoor, photos.reserveGreatRoom],
+  [photos.luxuryExterior, photos.dallasStone, photos.dallasMediterranean],
+  [photos.luxuryLiving, photos.dallasEntryDetail],
+  [photos.luxuryKitchen, photos.luxuryLiving],
+  [photos.luxuryBath, photos.luxuryLiving],
+  [photos.luxuryOutdoor, photos.luxuryExterior],
 ];
 
 export const stockPhotoList = budgetPhotos.flat();

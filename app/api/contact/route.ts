@@ -20,7 +20,6 @@ export async function POST(request: Request) {
   const phone = clean(body.phone, 40);
   const email = clean(body.email, 160);
   const location = clean(body.location, 180);
-  const investment = clean(body.investment, 80);
   const propertyStatus = clean(body.propertyStatus, 100);
   const timeline = clean(body.timeline, 100);
   const project = clean(body.project, 3000);
@@ -48,7 +47,6 @@ export async function POST(request: Request) {
     `Phone: ${phone}`,
     `Email: ${email}`,
     `Build location: ${location || "Not provided"}`,
-    `Project investment: ${investment || "Not provided"}`,
     `Property status: ${propertyStatus || "Not provided"}`,
     `Preferred timing: ${timeline || "Not provided"}`,
     "",

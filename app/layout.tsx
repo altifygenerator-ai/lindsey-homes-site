@@ -11,22 +11,22 @@ export const metadata: Metadata = {
     default: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
     template: "%s | Lindsey Homes",
   },
-  description: "Lindsey Homes builds custom residences and private estate homes across Dallas–Fort Worth, from thoughtfully designed custom homes to multi-million-dollar estate properties.",
+  description: "Lindsey Homes builds luxury custom residences and private estate homes across Dallas–Fort Worth.",
   openGraph: {
     title: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
-    description: "Custom residences and private estate homes across Dallas–Fort Worth.",
+    description: "Luxury custom residences and private estate homes across Dallas–Fort Worth.",
     type: "website",
     images: [site.logo],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lindsey Homes | Luxury Custom Homes in Dallas–Fort Worth",
-    description: "Custom residences and private estate homes across Dallas–Fort Worth.",
+    description: "Luxury custom residences and private estate homes across Dallas–Fort Worth.",
     images: [site.logo],
   },
   icons: {
-    icon: "/brand/lindsey-homes-mark.png",
-    apple: "/brand/lindsey-homes-mark.png",
+    icon: site.logo,
+    apple: site.logo,
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     telephone: site.phone,
     email: site.email,
     areaServed: "Dallas–Fort Worth, Texas",
-    description: "Custom residential home builder serving Dallas–Fort Worth, Texas.",
+    description: "Luxury custom residential home builder serving Dallas–Fort Worth, Texas.",
   };
 
   return (

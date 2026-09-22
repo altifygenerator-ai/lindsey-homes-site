@@ -8,42 +8,40 @@ export const site = {
   email: "whitney@lindseyhomesllc.com",
   emailHref: "mailto:whitney@lindseyhomesllc.com",
   leadContact: "Whitney",
-  logo: "/brand/lindsey-homes-logo.jpg",
+  logo: "/brand/lindsey-homes-logo-transparent.webp",
 };
 
 export const buildTypes = [
   {
     title: "Custom residences",
-    copy: "A home designed around your property, your priorities, and the way you want the spaces to work every day.",
+    copy: "Architecture shaped around the property, the people, and the way the home will be lived in.",
   },
   {
-    title: "Private estate homes",
-    copy: "Larger properties where the main residence, guest spaces, outdoor living, landscape, and arrival are planned together from the start.",
+    title: "Private estates",
+    copy: "Main residence, guest spaces, outdoor living, landscape, and arrival considered as one property.",
   },
   {
     title: "Build on your land",
-    copy: "Already have a property in Dallas–Fort Worth? We can begin with the land and shape the home around what makes that site work best.",
+    copy: "A home planned around the lot, its views, privacy, access, and natural light.",
   },
   {
-    title: "Design-forward residences",
-    copy: "Homes with a clear architectural point of view, thoughtful materials, and interiors that feel polished without feeling overdone.",
+    title: "Design-forward homes",
+    copy: "Strong architecture, refined materials, and interiors that feel connected from room to room.",
   },
 ];
 
 export const budgetBands = [
-  { range: "$650K+", label: "Custom residences", note: "A starting point for a fully custom home, with final cost shaped by the property, size, architecture, site work, and finish selections." },
-  { range: "$1M+", label: "High-end custom homes", note: "More room for architectural detail, specialty spaces, premium materials, and expanded indoor-outdoor living." },
-  { range: "$1.5M+", label: "Luxury residences", note: "Larger custom homes with a deeper level of architectural, interior, and finish detail." },
-  { range: "$2M+", label: "Estate residences", note: "Estate-scale homes with substantial finish packages, outdoor living, and more involved site planning." },
-  { range: "$2.5M+", label: "Private estates", note: "Highly tailored properties where the home, guest spaces, landscape, and amenities are designed as one complete estate." },
-  { range: "$4M+", label: "Signature estates", note: "One-of-a-kind projects shaped around the property, architecture, lifestyle, and long-term vision of the owner." },
+  { range: "Architecture", label: "Exterior inspiration", note: "Scale, materials, proportion, and the way a home meets the property." },
+  { range: "Interiors", label: "Interior inspiration", note: "Rooms with balance, natural light, and a consistent material language." },
+  { range: "Kitchens", label: "Kitchen inspiration", note: "Cabinetry, stone, lighting, and details designed as part of the whole home." },
+  { range: "Bathrooms", label: "Bath inspiration", note: "Quiet materials, strong lighting, and spaces that feel considered." },
+  { range: "Outdoor", label: "Outdoor living", note: "Covered spaces, pools, landscape, and the transition between inside and out." },
 ];
 
 export const residenceCollection = [
   {
     slug: "the-reserve",
     name: "The Reserve",
-    startingAt: "Starting at $2.5M+",
     status: "Featured residence",
     totalSqFt: "6,890 sq. ft.",
     mainResidence: "5,842 sq. ft.",
@@ -57,4 +55,4 @@ export const residenceCollection = [
 ];
 
 export const imageDisclaimer =
-  "The Reserve images and floor plan are concept visuals created for the residence, not photographs of a completed Lindsey Homes project. Final plans, specifications, and pricing will be developed for the actual property and may change with engineering, site conditions, selections, and location. Other reference photography is shown for design inspiration only.";
+  "The Reserve images and floor plan are concept visuals created for the residence, not photographs of a completed Lindsey Homes project. Final plans and specifications will be developed for the actual property and may change with engineering, site conditions, selections, and location. Other photography is shown for design inspiration only.";

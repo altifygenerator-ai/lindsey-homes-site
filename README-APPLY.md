@@ -1,34 +1,40 @@
-# Lindsey Homes — Dallas Video Hero Pass
+# Lindsey Homes — final visual-first homepage update
 
-This overlay keeps the latest luxury/DFW consistency pass and replaces the static Dallas panorama with a self-hosted cinematic video hero.
+Apply this overlay at the repository root.
 
 ## What changed
-- The homepage hero now uses one optimized 25.5-second loop assembled from all three Dallas aerial clips supplied for this pass.
-- Order: dusk bridge/skyline → downtown night/Reunion Tower → wider downtown night aerial.
-- The transitions are short crossfades so it reads as one restrained city sequence rather than a slideshow.
-- No sound, no visible controls, no arrows, no counters.
-- The video is 1920×1080 H.264, optimized to about 6.3 MB and fast-start enabled for web delivery.
-- A local poster image is included as the loading fallback.
-- Visitors using reduced-motion settings see the still poster instead of autoplay video.
-- Homepage copy remains below the panorama so the Dallas footage gets a clean first impression and is not covered by a giant headline.
+
+- Uses the final Lindsey Homes logo with a transparent background.
+- Keeps the Dallas skyline hero video.
+- Homepage header now overlays the hero in the reference-site style.
+- Adds a large centered luxury-custom-homes treatment.
+- Adds a hero consultation button that opens Call / Text / Send project details choices.
+- Keeps a separate Contact button in the upper-right navigation.
+- Rebuilds The Reserve into an interactive feature:
+  - hover reveals key specifications,
+  - click/tap expands the full residence information,
+  - expanded area can be closed again,
+  - only The Reserve concept imagery is used inside The Reserve feature.
+- Replaces Reserve images elsewhere with luxury design-inspiration imagery.
+- Adds visual sections for Luxury Homes, Interiors, Kitchens, Bathrooms, and Outdoor Living.
+- Removes public-facing price / budget / investment references.
+- Removes the investment field from the lead form and contact email.
+- Reduces homepage copy and lets photography carry more of the design.
 
 ## Apply
-Copy the contents of this folder over the repository root and replace matching files.
 
-Important paths:
-- `app/page.tsx`
-- `app/gallery.css`
-- `components/Header.tsx`
-- `data/site.ts`
-- `public/video/dallas-skyline-hero.mp4`
-- `public/video/dallas-skyline-hero-poster.jpg`
+From the Lindsey Homes project root, copy/overwrite the included folders/files, then run:
 
-The Header and site data files are included so this package also preserves the latest luxury-consistency changes if the previous overlay had not yet been applied.
+```powershell
+npm run build
+```
 
-## Video sources
-The source clips were supplied in the conversation and originated from Pexels:
-- Dallas skyline at dusk — Jim Baker: https://www.pexels.com/video/drone-footage-of-dallas-skyline-at-dusk-15613466/
-- Dallas at night — Jim Baker: https://www.pexels.com/video/drone-footage-of-the-city-of-dallas-at-night-16600939/
-- Dallas skyline at night — Advancer Drones: https://www.pexels.com/video/dallas-skyline-at-night-with-lights-on-18505641/
+If that passes:
 
-Pexels license: https://www.pexels.com/license/
+```powershell
+git add -A
+git commit -m "Refine luxury visual direction and Reserve experience"
+git push
+```
+
+No new npm packages are required.
