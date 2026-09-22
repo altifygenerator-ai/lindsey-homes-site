@@ -5,6 +5,7 @@ export const site = {
   region: "Dallas–Fort Worth",
   phone: "817-821-2476",
   phoneHref: "tel:+18178212476",
+  smsHref: "sms:+18178212476",
   email: "whitney@lindseyhomesllc.com",
   emailHref: "mailto:whitney@lindseyhomesllc.com",
   leadContact: "Whitney",
