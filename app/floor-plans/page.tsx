@@ -7,8 +7,14 @@ import { imageDisclaimer, residenceCollection } from "@/data/site";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "Residence Collection",
-  description: "Explore The Reserve and the growing Lindsey Homes residence collection for Dallas–Fort Worth.",
+  title: "The Reserve & Residence Collection",
+  description: "Explore The Reserve and the Lindsey Homes residence collection for custom homes and private estates in Dallas–Fort Worth.",
+  alternates: { canonical: "/floor-plans" },
+  openGraph: {
+    title: "The Reserve & Residence Collection | Lindsey Homes",
+    description: "Explore The Reserve and the Lindsey Homes residence collection in Dallas–Fort Worth.",
+    url: "/floor-plans",
+  },
 };
 
 export default function FloorPlansPage() {

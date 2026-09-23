@@ -5,8 +5,14 @@ import { ContactBand } from "@/components/ContactBand";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "Luxury Home Design Inspiration",
-  description: "Luxury home design inspiration for Lindsey Homes in Dallas–Fort Worth, including exteriors, kitchens, baths, interiors, and outdoor living.",
+  title: "Luxury Home Design Inspiration in Dallas–Fort Worth",
+  description: "Explore home design inspiration for Lindsey Homes, including architecture, interiors, kitchens, bathrooms, materials, and outdoor living.",
+  alternates: { canonical: "/inspiration" },
+  openGraph: {
+    title: "Luxury Home Design Inspiration in Dallas–Fort Worth | Lindsey Homes",
+    description: "Architecture, interiors, kitchens, bathrooms, materials, and outdoor living inspiration for North Texas homes.",
+    url: "/inspiration",
+  },
 };
 
 export default function InspirationPage() {

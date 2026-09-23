@@ -1,7 +1,7 @@
 export const site = {
   name: "Lindsey Homes LLC",
   shortName: "Lindsey Homes",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.lindseyhomes.com",
+  siteUrl: "https://lindseyhomesdfw.com",
   region: "Dallas–Fort Worth",
   phone: "817-821-2476",
   phoneHref: "tel:+18178212476",

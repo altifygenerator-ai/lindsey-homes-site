@@ -3,8 +3,14 @@ import { LeadForm } from "@/components/LeadForm";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Talk with Lindsey Homes about a custom home or private estate in Dallas–Fort Worth.",
+  title: "Contact a Dallas–Fort Worth Custom Home Builder",
+  description: "Contact Lindsey Homes to discuss a custom home, private estate, or build-on-your-land project in Dallas–Fort Worth and North Texas.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Lindsey Homes | Dallas–Fort Worth Custom Home Builder",
+    description: "Start a conversation about a custom home or private estate in Dallas–Fort Worth and North Texas.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -20,7 +26,7 @@ export default function ContactPage() {
             <span>New home inquiries</span>
             <strong>{site.leadContact} · Sales</strong>
             <a href={site.phoneHref}>{site.phone}</a>
-            <a href={`sms:+18178212476`}>Text Whitney</a>
+            <a href={site.smsHref}>Text Whitney</a>
             <a href={site.emailHref}>{site.email}</a>
           </div>
         </div>

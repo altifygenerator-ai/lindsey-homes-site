@@ -4,6 +4,8 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy for Lindsey Homes LLC.",
+  alternates: { canonical: "/privacy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {

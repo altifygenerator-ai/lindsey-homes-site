@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { track } from "@vercel/analytics";
 import { site } from "@/data/site";
 
 export function LeadForm({ compact = false }: { compact?: boolean }) {
@@ -24,6 +25,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       const result = await response.json();
       if (!response.ok) throw new Error(result?.message || "We could not send your inquiry.");
       form.reset();
+      track("Lead Submitted", { location: compact ? "home" : "contact" });
       setStatus("Thank you. Whitney will be in touch with you directly.");
     } catch (error) {
       const message = error instanceof Error ? error.message : "We could not send your inquiry.";

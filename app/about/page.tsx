@@ -5,8 +5,14 @@ import { ContactBand } from "@/components/ContactBand";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "Our Approach",
-  description: "How Lindsey Homes approaches luxury custom residential building across Dallas–Fort Worth.",
+  title: "Custom Home Building Approach in Dallas–Fort Worth",
+  description: "Learn how Lindsey Homes approaches custom home design and building across Dallas–Fort Worth, from the property and architecture through interiors and outdoor living.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "Custom Home Building Approach | Lindsey Homes",
+    description: "How Lindsey Homes approaches custom home design and building across Dallas–Fort Worth.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

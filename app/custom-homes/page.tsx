@@ -6,8 +6,14 @@ import { ContactBand } from "@/components/ContactBand";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "Luxury Custom Homes in Dallas–Fort Worth",
-  description: "Custom homes, private estates, and build-on-your-land residences by Lindsey Homes across Dallas–Fort Worth.",
+  title: "Custom Homes & Private Estates in Dallas–Fort Worth",
+  description: "Explore custom homes, private estates, and build-on-your-land residences by Lindsey Homes across Dallas–Fort Worth and North Texas.",
+  alternates: { canonical: "/custom-homes" },
+  openGraph: {
+    title: "Custom Homes & Private Estates in Dallas–Fort Worth | Lindsey Homes",
+    description: "Custom homes, private estates, and build-on-your-land residences across Dallas–Fort Worth and North Texas.",
+    url: "/custom-homes",
+  },
 };
 
 export default function CustomHomesPage() {
