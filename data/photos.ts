@@ -86,7 +86,7 @@ export const photos: Record<string, StockPhoto> = {
     label: "Kitchens",
     photographer: "Client-supplied design image",
     sourcePage: "",
-  ),
+  },
 
   luxuryBath: stock(
     "7031572",
