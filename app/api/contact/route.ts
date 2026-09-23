@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   const consent = clean(body.contactConsent, 10);
   const source = clean(body.source, 80) || "Website inquiry form";
   const page = clean(body.page, 180);
-
+  const receivedAt = new Date().toLocaleString("en-US", {\n    timeZone: "America/Chicago",\n    month: "short",\n    day: "numeric",\n    year: "numeric",\n    hour: "numeric",\n    minute: "2-digit",\n    timeZoneName: "short",\n  });\n
   if (!name || !phone || !email || consent !== "yes") {
     return NextResponse.json({ message: "Please include your name, phone number, email, and contact consent." }, { status: 400 });
   }
@@ -43,11 +43,10 @@ export async function POST(request: Request) {
   }
 
   const text = [
-    "New Lindsey Homes residential inquiry",
+    "NEW LINDSEY HOMES LEAD",
     "",
     `Source: ${source}`,
-    page ? `Page: ${page}` : "",
-    "",
+    page ? `Page: ${page}` : "",\n    `Received: ${receivedAt}`,\n    "",
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
@@ -56,8 +55,7 @@ export async function POST(request: Request) {
     `Preferred timing: ${timeline || "Not provided"}`,
     "",
     "Project details / conversation context:",
-    project || "Not provided",
-  ].filter(Boolean).join("\n");
+    project || "Not provided",\n    "",\n    "Reply to this email to reply directly to the lead.",\n  ].filter(Boolean).join("\\n");\n\n  const subject = ["New Lindsey Homes lead", source, location, name].filter(Boolean).join(" — ");
 
   try {
     const leadResponse = await fetch("https://api.resend.com/emails", {
@@ -70,7 +68,7 @@ export async function POST(request: Request) {
         from,
         to: [to],
         reply_to: email,
-        subject: `New Lindsey Homes inquiry — ${name}`,
+        subject,
         text,
       }),
     });
