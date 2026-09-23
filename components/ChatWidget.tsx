@@ -72,18 +72,19 @@ export function ChatWidget() {
         throw new Error(result?.message || "Chat unavailable.");
       }
 
-      setMessages((current) => [
-        ...current,
-        { role: "assistant", content: String(result.answer) },
-      ].slice(-12));
+      const assistantMessage: Message = {
+        role: "assistant",
+        content: String(result.answer),
+      };
+
+      setMessages((current) => [...current, assistantMessage].slice(-12));
     } catch {
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content: "I’m having trouble answering right now. You can still text or call Whitney directly, or send your project details through the contact form.",
-        },
-      ].slice(-12));
+      const fallbackMessage: Message = {
+        role: "assistant",
+        content: "I’m having trouble answering right now. You can still text or call Whitney directly, or send your project details through the contact form.",
+      };
+
+      setMessages((current) => [...current, fallbackMessage].slice(-12));
     } finally {
       setSending(false);
     }
