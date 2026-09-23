@@ -28,6 +28,15 @@ const stock = (id: string, alt: string, label: string, photographer: string, sou
   sourcePage,
 });
 
+const supplied = (id: string, file: string, alt: string, label: string): StockPhoto => ({
+  id,
+  src: `/luxury/${file}`,
+  alt,
+  label,
+  photographer: "Client-provided design reference",
+  sourcePage: "",
+});
+
 export const photos: Record<string, StockPhoto> = {
   dallasSkyline: stock(
     "18061788",
@@ -79,15 +88,6 @@ export const photos: Record<string, StockPhoto> = {
     "Max Vakhtbovych",
     "https://www.pexels.com/photo/modern-kitchen-interior-design-with-tiles-8146212/"
   ),
-  lindseyKitchen: {
-    id: "lindsey-kitchen-feature",
-    src: "/luxury/lindsey-kitchen-feature.webp",
-    alt: "Luxury kitchen with dual stone islands, brass pendant lighting, and warm wood flooring",
-    label: "Kitchens",
-    photographer: "Client-supplied design image",
-    sourcePage: "",
-  },
-
   luxuryBath: stock(
     "7031572",
     "Spacious modern luxury bathroom with clean architectural lines",
@@ -113,7 +113,14 @@ export const photos: Record<string, StockPhoto> = {
   reserveFloorPlan: local("reserve-plan", "reserve-floor-plan.jpg", "Concept floor plan for The Reserve", "Concept plan"),
   reserveWide: local("reserve-wide", "reserve-front-wide.webp", "Wide exterior concept rendering of The Reserve", "The Reserve"),
   reservePresentation: local("reserve-presentation", "reserve-presentation.webp", "The Reserve concept presentation with residence, floor plans, and site plan", "Residence concept"),
-  reserveKitchen: local("reserve-kitchen", "reserve-kitchen.jpg", "Luxury kitchen concept for The Reserve", "Kitchen"),
+  reserveKitchen: {
+    id: "reserve-kitchen",
+    src: "/luxury/lindsey-kitchen-reference.webp",
+    alt: "Luxury kitchen concept for The Reserve with warm white cabinetry, stone islands, brass pendant lighting, and garden views",
+    label: "Kitchen",
+    photographer: "Client-provided Reserve design image",
+    sourcePage: "",
+  },
   reserveGreatRoom: local("reserve-great-room", "reserve-great-room.jpg", "Open great room and kitchen concept for The Reserve", "Great room"),
 };
 
