@@ -22,7 +22,14 @@ export function Header() {
     <header className={`site-header ${home ? "site-header--hero" : ""}`}>
       <div className="masthead-main shell">
         <Link className="brand-panel" href="/" aria-label="Lindsey Homes home">
-          <Image src={site.logo} alt="Lindsey Homes" width={260} height={167} priority />
+          <Image
+            src={site.logo}
+            alt="Lindsey Homes"
+            width={260}
+            height={167}
+            priority
+            style={{ width: "100%", height: "auto" }}
+          />
         </Link>
 
         <nav id="primary-navigation" className={`primary-nav ${open ? "is-open" : ""}`} aria-label="Primary navigation">
