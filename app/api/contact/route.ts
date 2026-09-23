@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   const consent = clean(body.contactConsent, 10);
   const source = clean(body.source, 80) || "Website inquiry form";
   const page = clean(body.page, 180);
-  const receivedAt = new Date().toLocaleString("en-US", {\n    timeZone: "America/Chicago",\n    month: "short",\n    day: "numeric",\n    year: "numeric",\n    hour: "numeric",\n    minute: "2-digit",\n    timeZoneName: "short",\n  });\n
+
   if (!name || !phone || !email || consent !== "yes") {
     return NextResponse.json({ message: "Please include your name, phone number, email, and contact consent." }, { status: 400 });
   }
@@ -42,11 +42,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Online form delivery is not available right now." }, { status: 503 });
   }
 
+  const receivedAt = new Date().toLocaleString("en-US", {
+    timeZone: "America/Chicago",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
+
   const text = [
     "NEW LINDSEY HOMES LEAD",
     "",
     `Source: ${source}`,
-    page ? `Page: ${page}` : "",\n    `Received: ${receivedAt}`,\n    "",
+    page ? `Page: ${page}` : "",
+    `Received: ${receivedAt}`,
+    "",
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
@@ -55,7 +67,12 @@ export async function POST(request: Request) {
     `Preferred timing: ${timeline || "Not provided"}`,
     "",
     "Project details / conversation context:",
-    project || "Not provided",\n    "",\n    "Reply to this email to reply directly to the lead.",\n  ].filter(Boolean).join("\\n");\n\n  const subject = ["New Lindsey Homes lead", source, location, name].filter(Boolean).join(" — ");
+    project || "Not provided",
+    "",
+    "Reply to this email to reply directly to the lead.",
+  ].filter(Boolean).join("\n");
+
+  const subject = ["New Lindsey Homes lead", source, location, name].filter(Boolean).join(" — ");
 
   try {
     const leadResponse = await fetch("https://api.resend.com/emails", {
@@ -74,6 +91,8 @@ export async function POST(request: Request) {
     });
 
     if (!leadResponse.ok) {
+      const errorText = await leadResponse.text().catch(() => "");
+      console.error("Lindsey lead alert failed", leadResponse.status, errorText.slice(0, 500));
       return NextResponse.json({ message: "The form could not be delivered right now." }, { status: 502 });
     }
 
