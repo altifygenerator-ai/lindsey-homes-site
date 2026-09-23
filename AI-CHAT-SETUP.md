@@ -4,7 +4,7 @@
 
 - Adds a branded AI chat widget across the Lindsey Homes website.
 - Uses the OpenAI Responses API from a server-only Next.js route.
-- Uses `gpt-6-luna` by default for low-cost, focused website Q&A.
+- Uses `gpt-5.6-luna` by default for low-cost, focused website Q&A.
 - Grounds answers in `data/chat-knowledge.ts`.
 - Includes approved Lindsey Homes facts, The Reserve specifications, service-area language, contact details, and explicit no-guess/no-pricing guardrails.
 - Gives visitors persistent handoff actions to text Whitney, call Whitney, or send project details through the existing contact form.
@@ -17,7 +17,7 @@ Add these in Vercel Project Settings -> Environment Variables:
 
 ```
 OPENAI_API_KEY=your_openai_api_key
-OPENAI_CHAT_MODEL=gpt-6-luna
+OPENAI_CHAT_MODEL=gpt-5.6-luna
 ```
 
 Do not expose the API key as a `NEXT_PUBLIC_` variable.
