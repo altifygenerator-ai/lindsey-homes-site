@@ -22,7 +22,7 @@ export function ReserveFeature() {
             <img src={photos.reserveWide.src} alt={photos.reserveWide.alt} />
           </div>
           <div className="reserve-preview-image reserve-preview-image--side">
-            <img src={photos.reservePool.src} alt={photos.reservePool.alt} />
+            <img src={photos.reservePool.src} alt={photos.reservePool.alt} loading="lazy" decoding="async" />
           </div>
 
           <div className="reserve-preview-title">
@@ -72,35 +72,35 @@ export function ReserveFeature() {
 
           <div className="reserve-expanded-gallery">
             <figure className="reserve-gallery-main">
-              <img src={photos.reserveFront.src} alt={photos.reserveFront.alt} />
+              <img src={photos.reserveFront.src} alt={photos.reserveFront.alt} loading="lazy" decoding="async" />
               <figcaption>Estate exterior</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveEntry.src} alt={photos.reserveEntry.alt} />
+              <img src={photos.reserveEntry.src} alt={photos.reserveEntry.alt} loading="lazy" decoding="async" />
               <figcaption>Arrival</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveGreatRoom.src} alt={photos.reserveGreatRoom.alt} />
+              <img src={photos.reserveGreatRoom.src} alt={photos.reserveGreatRoom.alt} loading="lazy" decoding="async" />
               <figcaption>Great room</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveKitchen.src} alt={photos.reserveKitchen.alt} />
+              <img src={photos.reserveKitchen.src} alt={photos.reserveKitchen.alt} loading="lazy" decoding="async" />
               <figcaption>Kitchen</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveBath.src} alt={photos.reserveBath.alt} />
+              <img src={photos.reserveBath.src} alt={photos.reserveBath.alt} loading="lazy" decoding="async" />
               <figcaption>Primary bath</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveOutdoor.src} alt={photos.reserveOutdoor.alt} />
+              <img src={photos.reserveOutdoor.src} alt={photos.reserveOutdoor.alt} loading="lazy" decoding="async" />
               <figcaption>Outdoor living</figcaption>
             </figure>
             <figure>
-              <img src={photos.reserveGuest.src} alt={photos.reserveGuest.alt} />
+              <img src={photos.reserveGuest.src} alt={photos.reserveGuest.alt} loading="lazy" decoding="async" />
               <figcaption>Guest house</figcaption>
             </figure>
             <figure className="reserve-gallery-plan">
-              <img src={photos.reserveFloorPlan.src} alt={photos.reserveFloorPlan.alt} />
+              <img src={photos.reserveFloorPlan.src} alt={photos.reserveFloorPlan.alt} loading="lazy" decoding="async" />
               <figcaption>Concept floor plan</figcaption>
             </figure>
           </div>
