@@ -14,7 +14,11 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
     setStatus("");
 
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = {
+      ...Object.fromEntries(new FormData(form).entries()),
+      source: compact ? "Homepage inquiry form" : "Contact page inquiry form",
+      page: window.location.pathname,
+    };
 
     try {
       const response = await fetch("/api/contact", {
@@ -29,14 +33,14 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       setStatus("Thank you. Whitney will be in touch with you directly.");
     } catch (error) {
       const message = error instanceof Error ? error.message : "We could not send your inquiry.";
-      setStatus(`${message} You can also call ${site.phone} or email ${site.email}.`);
+      setStatus(message + " You can also call " + site.phone + " or email " + site.email + ".");
     } finally {
       setSending(false);
     }
   }
 
   return (
-    <form className={`lead-form ${compact ? "lead-form--compact" : ""}`} onSubmit={submit}>
+    <form className={"lead-form" + (compact ? " lead-form--compact" : "")} onSubmit={submit}>
       <div className="form-intro">
         <span>New home inquiry</span>
         <strong>Tell us what you are planning.</strong>

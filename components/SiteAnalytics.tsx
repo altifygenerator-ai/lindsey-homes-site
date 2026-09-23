@@ -5,7 +5,7 @@ import { track } from "@vercel/analytics";
 
 function getLocation(element: Element) {
   if (element.closest(".contact-choice")) return "consultation_dialog";
-  if (element.closest(".lh-chat")) return "ai_chat";
+  if (element.closest(".lh-chat")) return "concierge";
   if (element.closest(".home-hero")) return "hero";
   if (element.closest(".reserve-feature")) return "reserve";
   if (element.closest(".contact-page")) return "contact_page";
@@ -38,7 +38,11 @@ export function SiteAnalytics() {
         action.matches(".lh-chat-launcher") &&
         action.getAttribute("aria-expanded") === "false"
       ) {
-        track("AI Chat Open", { location });
+        track("Concierge Open", { location });
+      }
+
+      if (action.matches(".lh-chat-followup-trigger")) {
+        track("Concierge Follow-up Open", { location });
       }
 
       if (!(action instanceof HTMLAnchorElement)) return;

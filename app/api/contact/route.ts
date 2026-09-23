@@ -22,8 +22,10 @@ export async function POST(request: Request) {
   const location = clean(body.location, 180);
   const propertyStatus = clean(body.propertyStatus, 100);
   const timeline = clean(body.timeline, 100);
-  const project = clean(body.project, 3000);
+  const project = clean(body.project, 6000);
   const consent = clean(body.contactConsent, 10);
+  const source = clean(body.source, 80) || "Website inquiry form";
+  const page = clean(body.page, 180);
 
   if (!name || !phone || !email || consent !== "yes") {
     return NextResponse.json({ message: "Please include your name, phone number, email, and contact consent." }, { status: 400 });
@@ -43,6 +45,9 @@ export async function POST(request: Request) {
   const text = [
     "New Lindsey Homes residential inquiry",
     "",
+    `Source: ${source}`,
+    page ? `Page: ${page}` : "",
+    "",
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
@@ -50,12 +55,12 @@ export async function POST(request: Request) {
     `Property status: ${propertyStatus || "Not provided"}`,
     `Preferred timing: ${timeline || "Not provided"}`,
     "",
-    "Project details:",
+    "Project details / conversation context:",
     project || "Not provided",
-  ].join("\n");
+  ].filter(Boolean).join("\n");
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
+    const leadResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -70,8 +75,40 @@ export async function POST(request: Request) {
       }),
     });
 
-    if (!response.ok) {
+    if (!leadResponse.ok) {
       return NextResponse.json({ message: "The form could not be delivered right now." }, { status: 502 });
+    }
+
+    const firstName = name.split(/\s+/)[0] || name;
+    const acknowledgement = [
+      `Hi ${firstName},`,
+      "",
+      "Thanks for reaching out to Lindsey Homes. We received your project information and Whitney will review it directly.",
+      location ? `We noted the project location as ${location}.` : "",
+      "",
+      "If there is anything else you want us to know, just reply to this email.",
+      "",
+      "Lindsey Homes",
+      "817-821-2476",
+    ].filter(Boolean).join("\n");
+
+    try {
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from,
+          to: [email],
+          reply_to: to,
+          subject: "We received your Lindsey Homes inquiry",
+          text: acknowledgement,
+        }),
+      });
+    } catch {
+      console.error("Lindsey acknowledgement email failed");
     }
   } catch {
     return NextResponse.json({ message: "The form could not be delivered right now." }, { status: 502 });
