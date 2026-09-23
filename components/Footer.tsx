@@ -7,7 +7,13 @@ export function Footer() {
     <footer className="site-footer">
       <div className="shell footer-top">
         <div className="footer-brand">
-          <Image src={site.logo} alt="Lindsey Homes" width={220} height={141} />
+          <Image
+            src={site.logo}
+            alt="Lindsey Homes"
+            width={220}
+            height={141}
+            style={{ width: "100%", maxWidth: 220, height: "auto" }}
+          />
           <div>
             <strong>Lindsey Homes</strong>
             <p>Luxury custom homes and private estates across Dallas–Fort Worth.</p>
@@ -17,7 +23,7 @@ export function Footer() {
         <div className="footer-contact">
           <span>New home inquiries</span>
           <a href={site.phoneHref}>{site.phone}</a>
-          <a href={`sms:+18178212476`}>Text Whitney</a>
+          <a href={site.smsHref}>Text Whitney</a>
           <a href={site.emailHref}>{site.email}</a>
         </div>
       </div>
