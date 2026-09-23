@@ -79,6 +79,15 @@ export const photos: Record<string, StockPhoto> = {
     "Max Vakhtbovych",
     "https://www.pexels.com/photo/modern-kitchen-interior-design-with-tiles-8146212/"
   ),
+  lindseyKitchen: {
+    id: "lindsey-kitchen-feature",
+    src: "/luxury/lindsey-kitchen-feature.webp",
+    alt: "Luxury kitchen with dual stone islands, brass pendant lighting, and warm wood flooring",
+    label: "Kitchens",
+    photographer: "Client-supplied design image",
+    sourcePage: "",
+  ),
+
   luxuryBath: stock(
     "7031572",
     "Spacious modern luxury bathroom with clean architectural lines",

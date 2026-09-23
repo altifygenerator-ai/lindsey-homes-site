@@ -57,7 +57,7 @@ export default function HomePage() {
             <span>Interiors</span>
           </Link>
           <Link className="visual-tile" href="/inspiration">
-            <img src={photos.luxuryKitchen.src} alt={photos.luxuryKitchen.alt} />
+            <img src={photos.lindseyKitchen.src} alt={photos.lindseyKitchen.alt} />
             <span>Kitchens</span>
           </Link>
           <Link className="visual-tile" href="/inspiration">

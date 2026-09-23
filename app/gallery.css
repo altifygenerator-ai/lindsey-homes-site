@@ -986,15 +986,18 @@
   }
 
   .reserve-hover-info {
-    left: 18px;
-    right: 18px;
-    top: auto;
-    bottom: 154px;
-    width: auto;
-    grid-template-columns: repeat(2, 1fr);
+    left: auto;
+    right: 14px;
+    top: 16px;
+    bottom: auto;
+    width: min(205px, 54vw);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     transform: none;
     opacity: 1;
-    background: rgba(4,12,20,.64);
+    background: rgba(4,12,20,.48);
+    backdrop-filter: blur(7px);
+    border-color: rgba(255,255,255,.22);
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
   }
 
   .reserve-preview:hover .reserve-hover-info,
@@ -1003,7 +1006,19 @@
   }
 
   .reserve-hover-info > div {
-    padding: 12px 10px;
+    padding: 9px 8px;
+  }
+
+  .reserve-hover-info strong {
+    font-size: .95rem;
+    line-height: 1.05;
+  }
+
+  .reserve-hover-info span {
+    margin-top: 4px;
+    font-size: .46rem;
+    line-height: 1.25;
+    letter-spacing: .07em;
   }
 
   .reserve-expand-label {
