@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ContactChoice } from "@/components/ContactChoice";
 import { LeadForm } from "@/components/LeadForm";
 import { ReserveFeature } from "@/components/ReserveFeature";
+import { LindseyResidenceFeature } from "@/components/LindseyResidenceFeature";
+import { SignatureSeries } from "@/components/SignatureSeries";
 import { site } from "@/data/site";
 import { photos } from "@/data/photos";
 
@@ -37,6 +39,8 @@ export default function HomePage() {
       </section>
 
       <ReserveFeature />
+      <LindseyResidenceFeature />
+      <SignatureSeries />
 
       <section className="visual-gallery-section">
         <div className="shell visual-gallery-heading">
@@ -49,11 +53,11 @@ export default function HomePage() {
             <span>Luxury Homes</span>
           </Link>
           <Link className="visual-tile" href="/inspiration">
-            <img src={photos.luxuryLiving.src} alt={photos.luxuryLiving.alt} />
+            <img src={photos.featureGreatRoom.src} alt={photos.featureGreatRoom.alt} />
             <span>Interiors</span>
           </Link>
           <Link className="visual-tile" href="/inspiration">
-            <img src={photos.luxuryKitchen.src} alt={photos.luxuryKitchen.alt} />
+            <img src={photos.featureKitchen.src} alt={photos.featureKitchen.alt} />
             <span>Kitchens</span>
           </Link>
           <Link className="visual-tile" href="/inspiration">
@@ -65,7 +69,7 @@ export default function HomePage() {
             <span>Outdoor Living</span>
           </Link>
         </div>
-        <p className="shell visual-gallery-note">Design inspiration imagery. The Reserve concept imagery is kept within The Reserve feature.</p>
+        <p className="shell visual-gallery-note">Residence concept and design imagery shown throughout the site may be customized for the final property and project.</p>
       </section>
 
       <section className="home-statement">

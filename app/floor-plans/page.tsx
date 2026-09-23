@@ -7,18 +7,21 @@ import { imageDisclaimer, residenceCollection } from "@/data/site";
 import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
-  title: "The Reserve & Residence Collection",
-  description: "Explore The Reserve and the Lindsey Homes residence collection for custom homes and private estates in Dallas–Fort Worth.",
+  title: "Residence Collection & Signature Series",
+  description: "Explore The Reserve, The Lindsey, Oak Ridge, Cedar Grove, and the Lindsey Homes residence collection for Dallas–Fort Worth.",
   alternates: { canonical: "/floor-plans" },
   openGraph: {
-    title: "The Reserve & Residence Collection | Lindsey Homes",
-    description: "Explore The Reserve and the Lindsey Homes residence collection in Dallas–Fort Worth.",
+    title: "Residence Collection & Signature Series | Lindsey Homes",
+    description: "Explore The Reserve, The Lindsey, and Signature Series residences from Lindsey Homes.",
     url: "/floor-plans",
   },
 };
 
 export default function FloorPlansPage() {
-  const reserve = residenceCollection[0];
+  const reserve = residenceCollection.find((item) => item.slug === "the-reserve")!;
+  const lindsey = residenceCollection.find((item) => item.slug === "the-lindsey")!;
+  const oakRidge = residenceCollection.find((item) => item.slug === "oak-ridge")!;
+  const cedarGrove = residenceCollection.find((item) => item.slug === "cedar-grove")!;
 
   return (
     <>
@@ -54,11 +57,12 @@ export default function FloorPlansPage() {
             <div className="reserve-gallery-stats" aria-label="The Reserve key details">
               <span>{reserve.totalSqFt}</span>
               <span>{reserve.bedrooms}</span>
-              <span>6 full + 2 half baths</span>
+              <span>{reserve.bathrooms}</span>
             </div>
           </div>
 
           <ResidenceGallery
+            label="The Reserve image gallery"
             slides={[
               { src: photos.reserveWide.src, alt: photos.reserveWide.alt, eyebrow: "Exterior", title: "Estate approach", position: "center 52%" },
               { src: photos.reserveEntry.src, alt: photos.reserveEntry.alt, eyebrow: "Arrival", title: "Main entry" },
@@ -80,7 +84,7 @@ export default function FloorPlansPage() {
         <div className="experience-list">
           <div><strong>Main residence</strong><p>{reserve.mainResidence}</p></div>
           <div><strong>Guest house</strong><p>{reserve.guestHouse}</p></div>
-          <div><strong>Bedrooms + baths</strong><p>{reserve.bedrooms} · {reserve.fullBaths} · {reserve.halfBaths}</p></div>
+          <div><strong>Bedrooms + baths</strong><p>{reserve.bedrooms} · {reserve.bathrooms}</p></div>
           <div><strong>Garage</strong><p>{reserve.garage}</p></div>
           <div><strong>Features</strong><p>{reserve.amenities.join(" · ")}</p></div>
         </div>
@@ -93,6 +97,63 @@ export default function FloorPlansPage() {
             <h2>A starting point for the property.</h2>
           </div>
           <ImageSlot src={photos.reserveFloorPlan.src} alt={photos.reserveFloorPlan.alt} showLabel={false} />
+        </div>
+      </section>
+
+      <section className="collection-lindsey-section">
+        <div className="shell">
+          <div className="collection-lindsey-heading">
+            <div>
+              <span className="eyebrow">Featured Residence</span>
+              <h2>{lindsey.name}</h2>
+            </div>
+            <div className="collection-lindsey-specs">
+              <span>{lindsey.totalSqFt}</span>
+              <span>{lindsey.bedrooms}</span>
+              <span>{lindsey.bathrooms}</span>
+              <span>{lindsey.garage}</span>
+            </div>
+          </div>
+
+          <ResidenceGallery
+            label="The Lindsey image gallery"
+            slides={[
+              { src: photos.theLindseyFront.src, alt: photos.theLindseyFront.alt, eyebrow: "Exterior", title: "Modern luxury living" },
+              { src: photos.theLindseyAngle.src, alt: photos.theLindseyAngle.alt, eyebrow: "Exterior", title: "Timeless design" },
+              { src: photos.theLindseyFloorPlan.src, alt: photos.theLindseyFloorPlan.alt, eyebrow: "Plan", title: "5,312 sq. ft. one-story residence" },
+            ]}
+          />
+
+          <div className="collection-lindsey-amenities">
+            {lindsey.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="collection-signature-section">
+        <div className="shell collection-signature-heading">
+          <span className="eyebrow">Signature Series</span>
+          <h2>Customized to fit your family.</h2>
+        </div>
+
+        <div className="shell collection-signature-grid">
+          {[
+            { residence: oakRidge, presentation: photos.oakRidgePresentation, plan: photos.oakRidgeFloorPlan },
+            { residence: cedarGrove, presentation: photos.cedarGrovePresentation, plan: photos.cedarGroveFloorPlan },
+          ].map(({ residence, presentation, plan }) => (
+            <article className="collection-signature-card" key={residence.slug}>
+              <div className="collection-signature-card-images">
+                <img src={presentation.src} alt={presentation.alt} loading="lazy" decoding="async" />
+                <img src={plan.src} alt={plan.alt} loading="lazy" decoding="async" />
+              </div>
+              <div className="collection-signature-card-copy">
+                <span>{residence.status}</span>
+                <h3>{residence.name}</h3>
+                <p>{residence.totalSqFt} · {residence.bedrooms} · {residence.bathrooms}</p>
+                <Link href="/contact">Ask about {residence.name} →</Link>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

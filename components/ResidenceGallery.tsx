@@ -10,7 +10,7 @@ type Slide = {
   position?: string;
 };
 
-export function ResidenceGallery({ slides }: { slides: Slide[] }) {
+export function ResidenceGallery({ slides, label = "Residence image gallery" }: { slides: Slide[]; label?: string }) {
   const [index, setIndex] = useState(0);
   if (!slides.length) return null;
 
@@ -19,7 +19,7 @@ export function ResidenceGallery({ slides }: { slides: Slide[] }) {
   const next = () => setIndex((current) => (current + 1) % slides.length);
 
   return (
-    <div className="residence-gallery" aria-roledescription="carousel" aria-label="The Reserve image gallery">
+    <div className="residence-gallery" aria-roledescription="carousel" aria-label={label}>
       <div className="residence-gallery-stage">
         {slides.map((slide, slideIndex) => (
           <img
@@ -38,10 +38,10 @@ export function ResidenceGallery({ slides }: { slides: Slide[] }) {
 
         {slides.length > 1 ? (
           <>
-            <button type="button" className="residence-gallery-arrow residence-gallery-arrow--left" onClick={previous} aria-label="Previous Reserve image">
+            <button type="button" className="residence-gallery-arrow residence-gallery-arrow--left" onClick={previous} aria-label={`Previous image in ${label}`}>
               <span aria-hidden="true">‹</span>
             </button>
-            <button type="button" className="residence-gallery-arrow residence-gallery-arrow--right" onClick={next} aria-label="Next Reserve image">
+            <button type="button" className="residence-gallery-arrow residence-gallery-arrow--right" onClick={next} aria-label={`Next image in ${label}`}>
               <span aria-hidden="true">›</span>
             </button>
           </>

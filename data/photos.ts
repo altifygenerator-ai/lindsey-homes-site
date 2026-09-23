@@ -19,6 +19,24 @@ const local = (id: string, file: string, alt: string, label: string): StockPhoto
   sourcePage: "",
 });
 
+const residence = (id: string, path: string, alt: string, label: string): StockPhoto => ({
+  id,
+  src: `/residences/${path}`,
+  alt,
+  label,
+  photographer: "Lindsey Homes design material",
+  sourcePage: "",
+});
+
+const feature = (id: string, file: string, alt: string, label: string): StockPhoto => ({
+  id,
+  src: `/features/${file}`,
+  alt,
+  label,
+  photographer: "Client-provided design imagery",
+  sourcePage: "",
+});
+
 const stock = (id: string, alt: string, label: string, photographer: string, sourcePage: string): StockPhoto => ({
   id,
   src: pexels(id),
@@ -26,15 +44,6 @@ const stock = (id: string, alt: string, label: string, photographer: string, sou
   label,
   photographer,
   sourcePage,
-});
-
-const supplied = (id: string, file: string, alt: string, label: string): StockPhoto => ({
-  id,
-  src: `/luxury/${file}`,
-  alt,
-  label,
-  photographer: "Client-provided design reference",
-  sourcePage: "",
 });
 
 export const photos: Record<string, StockPhoto> = {
@@ -103,6 +112,19 @@ export const photos: Record<string, StockPhoto> = {
     "https://www.pexels.com/photo/modern-luxury-home-with-glass-facade-and-pool-28586202/"
   ),
 
+  featureKitchen: feature(
+    "feature-kitchen",
+    "lindsey-feature-kitchen.webp",
+    "Warm contemporary kitchen and dining space with tall windows and dark cabinetry",
+    "Kitchen"
+  ),
+  featureGreatRoom: feature(
+    "feature-great-room",
+    "lindsey-feature-great-room.webp",
+    "Bright great room with fireplace, open railing, and dining area",
+    "Great room"
+  ),
+
   reserveFront: local("reserve-front", "reserve-front-evening.webp", "The Reserve concept residence exterior at sunset", "The Reserve"),
   reservePool: local("reserve-pool", "reserve-pool-estate.webp", "The Reserve concept residence pool and backyard", "Pool + outdoor living"),
   reserveEntry: local("reserve-entry", "reserve-entry.webp", "The Reserve concept residence entry", "Arrival"),
@@ -122,12 +144,55 @@ export const photos: Record<string, StockPhoto> = {
     sourcePage: "",
   },
   reserveGreatRoom: local("reserve-great-room", "reserve-great-room.jpg", "Open great room and kitchen concept for The Reserve", "Great room"),
+
+  theLindseyFront: residence(
+    "the-lindsey-front",
+    "the-lindsey/the-lindsey-front.webp",
+    "The Lindsey modern luxury residence exterior at sunset",
+    "The Lindsey"
+  ),
+  theLindseyAngle: residence(
+    "the-lindsey-angle",
+    "the-lindsey/the-lindsey-angle.webp",
+    "Angled exterior concept view of The Lindsey",
+    "The Lindsey exterior"
+  ),
+  theLindseyFloorPlan: residence(
+    "the-lindsey-floor-plan",
+    "the-lindsey/the-lindsey-floor-plan.webp",
+    "The Lindsey one-story 5,312 square foot floor plan and residence presentation",
+    "The Lindsey floor plan"
+  ),
+  oakRidgePresentation: residence(
+    "oak-ridge-presentation",
+    "signature/oak-ridge-presentation.webp",
+    "Oak Ridge Signature Series residence presentation",
+    "Oak Ridge"
+  ),
+  oakRidgeFloorPlan: residence(
+    "oak-ridge-floor-plan",
+    "signature/oak-ridge-floor-plan.webp",
+    "Oak Ridge approximately 3,200 square foot main floor plan",
+    "Oak Ridge floor plan"
+  ),
+  cedarGrovePresentation: residence(
+    "cedar-grove-presentation",
+    "signature/cedar-grove-presentation.webp",
+    "Cedar Grove Signature Series residence presentation",
+    "Cedar Grove"
+  ),
+  cedarGroveFloorPlan: residence(
+    "cedar-grove-floor-plan",
+    "signature/cedar-grove-floor-plan.webp",
+    "Cedar Grove approximately 3,100 square foot floor plan",
+    "Cedar Grove floor plan"
+  ),
 };
 
 export const budgetPhotos: StockPhoto[][] = [
   [photos.luxuryExterior, photos.dallasStone, photos.dallasMediterranean],
-  [photos.luxuryLiving, photos.dallasEntryDetail],
-  [photos.luxuryKitchen, photos.luxuryLiving],
+  [photos.featureGreatRoom, photos.luxuryLiving],
+  [photos.featureKitchen, photos.luxuryKitchen],
   [photos.luxuryBath, photos.luxuryLiving],
   [photos.luxuryOutdoor, photos.luxuryExterior],
 ];
