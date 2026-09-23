@@ -39,6 +39,11 @@ export async function POST(request: Request) {
   const from = process.env.RESEND_FROM_EMAIL;
 
   if (!apiKey || !from) {
+    console.error("Lindsey contact email configuration missing", {
+      RESEND_API_KEY: Boolean(apiKey),
+      RESEND_FROM_EMAIL: Boolean(from),
+      LEAD_TO_EMAIL: Boolean(process.env.LEAD_TO_EMAIL),
+    });
     return NextResponse.json({ message: "Online form delivery is not available right now." }, { status: 503 });
   }
 
