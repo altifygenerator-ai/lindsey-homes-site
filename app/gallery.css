@@ -21,7 +21,8 @@
 
 .site-header .brand-panel img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -812,7 +813,8 @@
 /* New rectangular transparent logo in the footer. */
 .footer-brand img {
   width: 190px;
-  height: 122px;
+  height: auto;
+  max-height: 122px;
   object-fit: contain;
   border: 0;
 }
@@ -978,26 +980,33 @@
 
   .reserve-preview-title {
     left: 20px;
-    bottom: 92px;
+    right: 18px;
+    bottom: 118px;
   }
 
   .reserve-preview-title strong {
-    font-size: clamp(3rem, 16vw, 4.4rem);
+    font-size: clamp(2.8rem, 14vw, 4rem);
   }
 
   .reserve-hover-info {
     left: auto;
-    right: 14px;
-    top: 16px;
-    bottom: auto;
-    width: min(205px, 54vw);
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: min(142px, 36vw);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     transform: none;
     opacity: 1;
-    background: rgba(4,12,20,.48);
-    backdrop-filter: blur(7px);
-    border-color: rgba(255,255,255,.22);
-    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    background: rgba(4,12,20,.80);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.20);
+    box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  }
+
+  .reserve-preview:hover .reserve-preview-image img,
+  .reserve-preview:focus-visible .reserve-preview-image img {
+    transform: none;
+    filter: none;
   }
 
   .reserve-preview:hover .reserve-hover-info,
@@ -1006,25 +1015,28 @@
   }
 
   .reserve-hover-info > div {
-    padding: 9px 8px;
+    min-height: 38px;
+    padding: 5px 5px 4px;
   }
 
   .reserve-hover-info strong {
-    font-size: .95rem;
-    line-height: 1.05;
+    font-size: .58rem;
+    line-height: 1.02;
   }
 
   .reserve-hover-info span {
-    margin-top: 4px;
-    font-size: .46rem;
-    line-height: 1.25;
-    letter-spacing: .07em;
+    margin-top: 2px;
+    font-size: .28rem;
+    line-height: 1.12;
+    letter-spacing: .04em;
   }
 
   .reserve-expand-label {
     left: 20px;
     right: auto;
-    bottom: 30px;
+    bottom: 28px;
+    max-width: calc(100% - 176px);
+    font-size: .58rem;
   }
 
   .reserve-expanded {
@@ -1084,7 +1096,8 @@
 
   .footer-brand img {
     width: 220px;
-    height: 140px;
+    height: auto;
+    max-height: 140px;
   }
 
   .residence-gallery-stage {
