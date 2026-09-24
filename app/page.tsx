@@ -66,6 +66,10 @@ export default function HomePage() {
             <img src={photos.inspirationFeatureMudroomDark.src} alt={photos.inspirationFeatureMudroomDark.alt} />
             <span>Features</span>
           </Link>
+          <Link className="visual-tile" href="/inspiration#entrances">
+            <img src={photos.dallasEntryDetail.src} alt={photos.dallasEntryDetail.alt} />
+            <span>Entrances</span>
+          </Link>
           <Link className="visual-tile visual-tile--wide" href="/inspiration#outdoor-living">
             <img src={photos.luxuryOutdoor.src} alt={photos.luxuryOutdoor.alt} />
             <span>Outdoor Living</span>

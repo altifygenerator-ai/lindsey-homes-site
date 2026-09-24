@@ -36,3 +36,10 @@ Design inspiration / bucket update:
 - Rebuilt /inspiration into dedicated category sections with anchors for each homepage bucket.
 - Kept Outdoor Living using the existing reference image because no new outdoor-living image was supplied in this batch.
 - The visible watermark on the supplied green built-in mudroom image is preserved as provided; the homepage uses a different Features image without that watermark.
+
+
+Entrances update:
+- Added Entrances as a sixth homepage inspiration bucket.
+- Added an Entrances section to /inspiration.
+- Uses the existing general Dallas entry-detail reference image, not imagery tied to any named residence.
+- Homepage buckets are now: Interiors, Kitchens, Bathrooms, Features, Entrances, Outdoor Living.

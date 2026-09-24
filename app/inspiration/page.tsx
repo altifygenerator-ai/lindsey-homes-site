@@ -62,6 +62,14 @@ const sections = [
     ],
   },
   {
+    id: "entrances",
+    eyebrow: "Entrances",
+    title: "Arrival spaces that set the tone before you ever step fully inside.",
+    images: [
+      photos.dallasEntryDetail,
+    ],
+  },
+  {
     id: "outdoor-living",
     eyebrow: "Outdoor Living",
     title: "Covered spaces, pools, landscape, and a natural connection between inside and out.",
