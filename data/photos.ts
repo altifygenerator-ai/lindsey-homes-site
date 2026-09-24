@@ -28,6 +28,16 @@ const residence = (id: string, path: string, alt: string, label: string): StockP
   sourcePage: "",
 });
 
+
+const inspiration = (id: string, file: string, alt: string, label: string): StockPhoto => ({
+  id,
+  src: `/inspiration/${file}`,
+  alt,
+  label,
+  photographer: "Client-provided design inspiration",
+  sourcePage: "",
+});
+
 const feature = (id: string, file: string, alt: string, label: string): StockPhoto => ({
   id,
   src: `/features/${file}`,
@@ -125,6 +135,92 @@ export const photos: Record<string, StockPhoto> = {
     "Great room"
   ),
 
+
+  inspirationGreatRoom: inspiration(
+    "inspiration-great-room",
+    "interior-great-room-fireplace.webp",
+    "Warm great room with stone fireplace, wood ceiling detail, and open kitchen connection",
+    "Interiors"
+  ),
+  inspirationStoneFireplace: inspiration(
+    "inspiration-stone-fireplace",
+    "interior-double-sided-stone-fireplace.webp",
+    "Double-sided stone fireplace connecting living and dining spaces",
+    "Interiors"
+  ),
+  inspirationKitchenWhite: inspiration(
+    "inspiration-kitchen-white",
+    "kitchen-white-double-island.webp",
+    "Bright custom kitchen with twin stone islands, brass pendants, and full-height cabinetry",
+    "Kitchens"
+  ),
+  inspirationBathNeutralSpa: inspiration(
+    "inspiration-bath-neutral-spa",
+    "bath-neutral-spa.webp",
+    "Neutral spa bathroom with freestanding tub, glass shower, and illuminated niche",
+    "Bathrooms"
+  ),
+  inspirationBathPlumGreen: inspiration(
+    "inspiration-bath-plum-green",
+    "bath-plum-green.webp",
+    "Moody primary bathroom with warm wood cabinetry, green tile, brass fixtures, and freestanding tub",
+    "Bathrooms"
+  ),
+  inspirationBathVaultedMarble: inspiration(
+    "inspiration-bath-vaulted-marble",
+    "bath-vaulted-marble.webp",
+    "Vaulted bathroom with exposed wood beams, marble shower, and dark vanity",
+    "Bathrooms"
+  ),
+  inspirationBathBrass: inspiration(
+    "inspiration-bath-brass",
+    "bath-brass-glass-shower.webp",
+    "Light bathroom with freestanding tub, brass fixtures, and large glass shower",
+    "Bathrooms"
+  ),
+  inspirationBathGreenDouble: inspiration(
+    "inspiration-bath-green-double",
+    "bath-green-tile-double-shower.webp",
+    "Large primary bath with double shower, deep green tile, marble surfaces, and freestanding tub",
+    "Bathrooms"
+  ),
+  inspirationBathOliveVaulted: inspiration(
+    "inspiration-bath-olive-vaulted",
+    "bath-vaulted-olive.webp",
+    "Vaulted olive-toned bathroom with exposed beams, freestanding tub, and walk-in shower",
+    "Bathrooms"
+  ),
+  inspirationBathBlueShower: inspiration(
+    "inspiration-bath-blue-shower",
+    "bath-double-shower-blue-tile.webp",
+    "Walk-in double shower with blue-gray vertical tile, built-in niche, and warm wood vanity",
+    "Bathrooms"
+  ),
+  inspirationBathBrassLight: inspiration(
+    "inspiration-bath-brass-light",
+    "bath-brass-glass-shower-light.webp",
+    "Bright bathroom with brass-framed shower, freestanding tub, and pale wood vanity",
+    "Bathrooms"
+  ),
+  inspirationFeatureMudroomAdventure: inspiration(
+    "inspiration-feature-mudroom-adventure",
+    "feature-mudroom-adventure.webp",
+    "Built-in mudroom bench with stone wall, storage cubbies, hooks, and green cabinetry",
+    "Features"
+  ),
+  inspirationFeatureMudroomDark: inspiration(
+    "inspiration-feature-mudroom-dark",
+    "feature-mudroom-dark-builtins.webp",
+    "Custom dark cabinetry and built-in mudroom storage with central work island",
+    "Features"
+  ),
+  inspirationFeatureMudroomGreen: inspiration(
+    "inspiration-feature-mudroom-green",
+    "feature-mudroom-green-builtins.webp",
+    "Green built-in mudroom wall with bench, open shelving, baskets, and wood accents",
+    "Features"
+  ),
+
   reserveFront: local("reserve-front", "reserve-front-evening.webp", "The Reserve concept residence exterior at sunset", "The Reserve"),
   reservePool: local("reserve-pool", "reserve-pool-estate.webp", "The Reserve concept residence pool and backyard", "Pool + outdoor living"),
   reserveEntry: local("reserve-entry", "reserve-entry.webp", "The Reserve concept residence entry", "Arrival"),
@@ -203,11 +299,24 @@ export const photos: Record<string, StockPhoto> = {
 };
 
 export const budgetPhotos: StockPhoto[][] = [
-  [photos.luxuryExterior, photos.dallasStone, photos.dallasMediterranean],
-  [photos.featureGreatRoom, photos.luxuryLiving],
-  [photos.featureKitchen, photos.luxuryKitchen],
-  [photos.luxuryBath, photos.luxuryLiving],
-  [photos.luxuryOutdoor, photos.luxuryExterior],
+  [photos.inspirationGreatRoom, photos.inspirationStoneFireplace, photos.featureGreatRoom],
+  [photos.inspirationKitchenWhite, photos.featureKitchen, photos.luxuryKitchen],
+  [
+    photos.inspirationBathNeutralSpa,
+    photos.inspirationBathPlumGreen,
+    photos.inspirationBathVaultedMarble,
+    photos.inspirationBathBrass,
+    photos.inspirationBathGreenDouble,
+    photos.inspirationBathOliveVaulted,
+    photos.inspirationBathBlueShower,
+    photos.inspirationBathBrassLight,
+  ],
+  [
+    photos.inspirationFeatureMudroomAdventure,
+    photos.inspirationFeatureMudroomDark,
+    photos.inspirationFeatureMudroomGreen,
+  ],
+  [photos.luxuryOutdoor],
 ];
 
 export const stockPhotoList = budgetPhotos.flat();

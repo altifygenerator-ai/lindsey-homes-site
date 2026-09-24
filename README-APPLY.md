@@ -26,3 +26,13 @@ Blackwood Estate addition:
 - Added the supplied Blackwood presentation and preliminary floor plan.
 - Added Blackwood Estate to the Residence Collection page.
 - Updated concierge knowledge for The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, and the Signature Series.
+
+
+Design inspiration / bucket update:
+- Removed "Luxury Homes" from the homepage design buckets for now.
+- Homepage buckets are now: Interiors, Kitchens, Bathrooms, Features, Outdoor Living.
+- Added all newly supplied interior, kitchen, bathroom, fireplace, mudroom, built-in, and feature imagery as general design inspiration.
+- None of these new inspiration images are attached to The Reserve, The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, or any other residence.
+- Rebuilt /inspiration into dedicated category sections with anchors for each homepage bucket.
+- Kept Outdoor Living using the existing reference image because no new outdoor-living image was supplied in this batch.
+- The visible watermark on the supplied green built-in mudroom image is preserved as provided; the homepage uses a different Features image without that watermark.

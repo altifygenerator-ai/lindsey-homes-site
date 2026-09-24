@@ -50,28 +50,28 @@ export default function HomePage() {
           <h2>Luxury, expressed through the details.</h2>
         </div>
         <div className="shell visual-gallery-grid">
-          <Link className="visual-tile visual-tile--wide" href="/custom-homes">
-            <img src={photos.luxuryExterior.src} alt={photos.luxuryExterior.alt} />
-            <span>Luxury Homes</span>
-          </Link>
-          <Link className="visual-tile" href="/inspiration">
-            <img src={photos.featureGreatRoom.src} alt={photos.featureGreatRoom.alt} />
+          <Link className="visual-tile visual-tile--wide" href="/inspiration#interiors">
+            <img src={photos.inspirationGreatRoom.src} alt={photos.inspirationGreatRoom.alt} />
             <span>Interiors</span>
           </Link>
-          <Link className="visual-tile" href="/inspiration">
-            <img src={photos.featureKitchen.src} alt={photos.featureKitchen.alt} />
+          <Link className="visual-tile" href="/inspiration#kitchens">
+            <img src={photos.inspirationKitchenWhite.src} alt={photos.inspirationKitchenWhite.alt} />
             <span>Kitchens</span>
           </Link>
-          <Link className="visual-tile" href="/inspiration">
-            <img src={photos.luxuryBath.src} alt={photos.luxuryBath.alt} />
+          <Link className="visual-tile" href="/inspiration#bathrooms">
+            <img src={photos.inspirationBathNeutralSpa.src} alt={photos.inspirationBathNeutralSpa.alt} />
             <span>Bathrooms</span>
           </Link>
-          <Link className="visual-tile visual-tile--wide" href="/inspiration">
+          <Link className="visual-tile" href="/inspiration#features">
+            <img src={photos.inspirationFeatureMudroomDark.src} alt={photos.inspirationFeatureMudroomDark.alt} />
+            <span>Features</span>
+          </Link>
+          <Link className="visual-tile visual-tile--wide" href="/inspiration#outdoor-living">
             <img src={photos.luxuryOutdoor.src} alt={photos.luxuryOutdoor.alt} />
             <span>Outdoor Living</span>
           </Link>
         </div>
-        <p className="shell visual-gallery-note">Residence concept and design imagery shown throughout the site may be customized for the final property and project.</p>
+        <p className="shell visual-gallery-note">Design inspiration imagery is shown to communicate style, materials, and features. Residence concept imagery remains within the individual residence sections.</p>
       </section>
 
       <section className="home-statement">

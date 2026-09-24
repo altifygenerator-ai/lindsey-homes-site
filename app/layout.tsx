@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import "./gallery.css";
 import "./residence-series.css";
+import "./inspiration-gallery.css";
 import "./chat-widget.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
