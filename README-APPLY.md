@@ -18,3 +18,11 @@ Apply:
 3. Commit and push if the build passes.
 
 This ZIP is repo-relative with no wrapper folder.
+
+
+Blackwood Estate addition:
+- Blackwood Estate sits directly under The Lindsey.
+- Approx. 4,568 sq. ft. living, 5 bedrooms, 4 full + 1 half baths, 3-car side-entry garage.
+- Added the supplied Blackwood presentation and preliminary floor plan.
+- Added Blackwood Estate to the Residence Collection page.
+- Updated concierge knowledge for The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, and the Signature Series.

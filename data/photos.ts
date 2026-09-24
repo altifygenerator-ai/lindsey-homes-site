@@ -163,6 +163,19 @@ export const photos: Record<string, StockPhoto> = {
     "The Lindsey one-story 5,312 square foot floor plan and residence presentation",
     "The Lindsey floor plan"
   ),
+
+  blackwoodPresentation: residence(
+    "blackwood-estate-presentation",
+    "blackwood-estate/blackwood-estate-presentation.webp",
+    "Blackwood Estate luxury black farmhouse residence presentation",
+    "Blackwood Estate"
+  ),
+  blackwoodFloorPlan: residence(
+    "blackwood-estate-floor-plan",
+    "blackwood-estate/blackwood-estate-floor-plan.webp",
+    "Blackwood Estate approximately 4,568 square foot one-story floor plan",
+    "Blackwood Estate floor plan"
+  ),
   oakRidgePresentation: residence(
     "oak-ridge-presentation",
     "signature/oak-ridge-presentation.webp",

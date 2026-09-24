@@ -4,6 +4,7 @@ import { ContactChoice } from "@/components/ContactChoice";
 import { LeadForm } from "@/components/LeadForm";
 import { ReserveFeature } from "@/components/ReserveFeature";
 import { LindseyResidenceFeature } from "@/components/LindseyResidenceFeature";
+import { BlackwoodEstateFeature } from "@/components/BlackwoodEstateFeature";
 import { SignatureSeries } from "@/components/SignatureSeries";
 import { site } from "@/data/site";
 import { photos } from "@/data/photos";
@@ -40,6 +41,7 @@ export default function HomePage() {
 
       <ReserveFeature />
       <LindseyResidenceFeature />
+      <BlackwoodEstateFeature />
       <SignatureSeries />
 
       <section className="visual-gallery-section">

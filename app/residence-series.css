@@ -489,3 +489,319 @@
     padding: 24px 20px 28px;
   }
 }
+
+
+/* Blackwood Estate — directly beneath The Lindsey */
+.blackwood-feature {
+  padding-block: clamp(76px, 9vw, 124px);
+  background: #050b10;
+  color: #fff;
+}
+
+.blackwood-preview {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  background: #07111b;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.blackwood-preview > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, filter .45s ease;
+}
+
+.blackwood-preview:hover > img {
+  transform: scale(1.018);
+  filter: brightness(.82);
+}
+
+.blackwood-preview-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(2,7,12,.08) 32%, rgba(2,7,12,.82) 100%),
+    linear-gradient(90deg, rgba(2,7,12,.28), transparent 56%);
+}
+
+.blackwood-preview-title {
+  position: absolute;
+  z-index: 2;
+  left: clamp(24px, 4vw, 58px);
+  bottom: clamp(32px, 4vw, 56px);
+  display: grid;
+  max-width: 700px;
+}
+
+.blackwood-preview-title span {
+  color: var(--gold-bright);
+  font-size: .64rem;
+  font-weight: 850;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.blackwood-preview-title strong {
+  margin-top: 5px;
+  font-family: var(--display);
+  font-size: clamp(3rem, 6vw, 6.3rem);
+  font-weight: 500;
+  line-height: .9;
+}
+
+.blackwood-preview-title small {
+  margin-top: 10px;
+  color: rgba(255,255,255,.78);
+  font-size: .68rem;
+  font-weight: 750;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.blackwood-preview-stats {
+  position: absolute;
+  z-index: 3;
+  right: 28px;
+  bottom: 28px;
+  width: min(560px, 48%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(4,10,15,.72);
+  backdrop-filter: blur(10px);
+}
+
+.blackwood-preview-stats > span {
+  padding: 14px 16px;
+  border-right: 1px solid rgba(255,255,255,.14);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+.blackwood-preview-stats > span:nth-child(2n) { border-right: 0; }
+.blackwood-preview-stats > span:nth-last-child(-n+2) { border-bottom: 0; }
+
+.blackwood-preview-stats strong,
+.blackwood-preview-stats small {
+  display: block;
+}
+
+.blackwood-preview-stats strong {
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+  font-weight: 500;
+}
+
+.blackwood-preview-stats small {
+  margin-top: 2px;
+  color: rgba(255,255,255,.55);
+  font-size: .52rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.blackwood-preview-action {
+  position: absolute;
+  z-index: 4;
+  top: 28px;
+  right: 30px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,.66);
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.blackwood-expanded {
+  padding-top: 58px;
+}
+
+.blackwood-expanded-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+.blackwood-expanded-head h2 {
+  max-width: 820px;
+  margin-top: 8px;
+  font-size: clamp(2.6rem, 4.7vw, 5rem);
+}
+
+.blackwood-expanded-head button {
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  background: transparent;
+  color: rgba(255,255,255,.75);
+  cursor: pointer;
+  padding: 8px 0 5px;
+  font-size: .65rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.blackwood-expanded-grid {
+  background: #fff;
+}
+
+.blackwood-expanded-grid figure {
+  position: relative;
+  margin: 0;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.blackwood-expanded-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.blackwood-expanded-grid figcaption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  padding: 6px 9px;
+  background: rgba(6,19,33,.78);
+  color: #fff;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.blackwood-amenities,
+.collection-blackwood-amenities {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blackwood-amenities span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.65);
+  font-size: .61rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.blackwood-disclaimer {
+  max-width: 960px;
+  margin-top: 24px;
+  color: rgba(255,255,255,.42);
+  font-size: .68rem;
+  line-height: 1.6;
+}
+
+.collection-blackwood-section {
+  padding-block: clamp(82px, 9vw, 124px);
+  background: #071522;
+  color: #fff;
+}
+
+.collection-blackwood-heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.collection-blackwood-heading h2 {
+  margin-top: 7px;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+}
+
+.collection-blackwood-heading p {
+  max-width: 620px;
+  margin-top: 12px;
+  color: rgba(255,255,255,.58);
+}
+
+.collection-blackwood-specs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+  max-width: 540px;
+  padding-bottom: 8px;
+  color: rgba(255,255,255,.62);
+  font-size: .65rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.collection-blackwood-amenities span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.65);
+  font-size: .61rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .blackwood-preview { min-height: 560px; }
+  .blackwood-preview-stats { width: min(500px, 55%); }
+  .collection-blackwood-heading { grid-template-columns: 1fr; }
+  .collection-blackwood-specs { justify-content: flex-start; }
+}
+
+@media (max-width: 680px) {
+  .blackwood-feature { padding-block: 56px; }
+  .blackwood-preview { min-height: 560px; }
+
+  .blackwood-preview-title {
+    left: 20px;
+    right: 20px;
+    bottom: 118px;
+  }
+
+  .blackwood-preview-title strong {
+    font-size: clamp(2.8rem, 13.5vw, 4rem);
+  }
+
+  .blackwood-preview-title small { font-size: .54rem; }
+
+  .blackwood-preview-stats {
+    right: 10px;
+    bottom: 10px;
+    width: min(174px, 44vw);
+  }
+
+  .blackwood-preview-stats > span { padding: 6px 6px 5px; }
+  .blackwood-preview-stats strong { font-size: .60rem; }
+  .blackwood-preview-stats small { font-size: .27rem; }
+
+  .blackwood-preview-action {
+    top: auto;
+    left: 20px;
+    right: auto;
+    bottom: 28px;
+    max-width: calc(100% - 205px);
+    font-size: .54rem;
+  }
+
+  .blackwood-expanded-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blackwood-expanded-grid figure {
+    min-height: 320px;
+  }
+}

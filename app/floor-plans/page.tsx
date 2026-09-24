@@ -8,11 +8,11 @@ import { photos } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Residence Collection & Signature Series",
-  description: "Explore The Reserve, The Lindsey, Oak Ridge, Cedar Grove, and the Lindsey Homes residence collection for Dallas–Fort Worth.",
+  description: "Explore The Reserve, The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, and the Lindsey Homes residence collection for Dallas–Fort Worth.",
   alternates: { canonical: "/floor-plans" },
   openGraph: {
     title: "Residence Collection & Signature Series | Lindsey Homes",
-    description: "Explore The Reserve, The Lindsey, and Signature Series residences from Lindsey Homes.",
+    description: "Explore The Reserve, The Lindsey, Blackwood Estate, and Signature Series residences from Lindsey Homes.",
     url: "/floor-plans",
   },
 };
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 export default function FloorPlansPage() {
   const reserve = residenceCollection.find((item) => item.slug === "the-reserve")!;
   const lindsey = residenceCollection.find((item) => item.slug === "the-lindsey")!;
+  const blackwood = residenceCollection.find((item) => item.slug === "blackwood-estate")!;
   const oakRidge = residenceCollection.find((item) => item.slug === "oak-ridge")!;
   const cedarGrove = residenceCollection.find((item) => item.slug === "cedar-grove")!;
 
@@ -126,6 +127,37 @@ export default function FloorPlansPage() {
 
           <div className="collection-lindsey-amenities">
             {lindsey.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}
+          </div>
+        </div>
+      </section>
+
+
+      <section className="collection-blackwood-section">
+        <div className="shell">
+          <div className="collection-blackwood-heading">
+            <div>
+              <span className="eyebrow eyebrow-light">Featured Residence</span>
+              <h2>{blackwood.name}</h2>
+              <p>Luxury black farmhouse architecture with vaulted gathering spaces and a generous one-story plan.</p>
+            </div>
+            <div className="collection-blackwood-specs">
+              <span>{blackwood.totalSqFt}</span>
+              <span>{blackwood.bedrooms}</span>
+              <span>{blackwood.bathrooms}</span>
+              <span>{blackwood.garage}</span>
+            </div>
+          </div>
+
+          <ResidenceGallery
+            label="Blackwood Estate image gallery"
+            slides={[
+              { src: photos.blackwoodPresentation.src, alt: photos.blackwoodPresentation.alt, eyebrow: "Residence", title: "Luxury black farmhouse" },
+              { src: photos.blackwoodFloorPlan.src, alt: photos.blackwoodFloorPlan.alt, eyebrow: "Plan", title: "Approx. 4,568 sq. ft. one-story residence" },
+            ]}
+          />
+
+          <div className="collection-blackwood-amenities">
+            {blackwood.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}
           </div>
         </div>
       </section>

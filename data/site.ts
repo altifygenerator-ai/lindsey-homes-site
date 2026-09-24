@@ -70,6 +70,22 @@ export const residenceCollection = [
     garage: "4-car garage",
     amenities: ["Chef's kitchen", "Prep kitchen", "Great room with fireplace", "Private study", "Media room", "Fitness room", "Wine room", "Outdoor kitchen", "Pool + spa"],
   },
+
+  {
+    slug: "blackwood-estate",
+    name: "Blackwood Estate",
+    status: "Featured residence",
+    series: "Luxury Black Farmhouse",
+    totalSqFt: "Approx. 4,568 sq. ft.",
+    mainResidence: "Approx. 4,568 sq. ft.",
+    guestHouse: "",
+    bedrooms: "5 bedrooms",
+    bathrooms: "4 full + 1 half bathrooms",
+    fullBaths: "4 full bathrooms",
+    halfBaths: "1 half bathroom",
+    garage: "3-car side-entry garage",
+    amenities: ["Vaulted great room", "Vaulted primary suite", "Vaulted rear porch", "Butler's pantry", "Library nook", "Laundry / mud room", "Covered front porch"],
+  },
   {
     slug: "oak-ridge",
     name: "Oak Ridge",
