@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   creator: "Lindsey Homes LLC",
   publisher: "Lindsey Homes LLC",
   category: "Custom Home Building",
+  verification: {
+    google: "xTUmxKeBr2lrFqM83MEW79lbXVw1-dHS7qc9VV5bbS8",
+  },
   robots: {
     index: true,
     follow: true,
