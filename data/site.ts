@@ -1,7 +1,7 @@
 export const site = {
   name: "Lindsey Homes LLC",
   shortName: "Lindsey Homes",
-  siteUrl: "https://lindseyhomesdfw.com",
+  siteUrl: "https://www.lindseyhomesdfw.com",
   region: "Dallas–Fort Worth",
   phone: "817-821-2476",
   phoneHref: "tel:+18178212476",
