@@ -1,14 +1,42 @@
 import { NextResponse } from "next/server";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 function clean(value: unknown, max: number) { return String(value || "").trim().slice(0, max); }
-async function sendLeadSms(input: { name: string; phone: string; email: string; location: string; source: string; project: string; }) {
-  const accountSid=process.env.TWILIO_ACCOUNT_SID, authToken=process.env.TWILIO_AUTH_TOKEN, fromNumber=process.env.TWILIO_FROM_NUMBER, messagingServiceSid=process.env.TWILIO_MESSAGING_SERVICE_SID, toNumber=process.env.LEAD_TO_PHONE || "+18178212476";
-  if(!accountSid||!authToken||(!fromNumber&&!messagingServiceSid)||!toNumber) return;
-  const summary=input.project.replace(/\s+/g," ").trim().slice(0,420);
-  const body=["NEW LINDSEY HOMES LEAD",`${input.name} · ${input.phone}`,input.email,input.location?`Location: ${input.location}`:"",`Source: ${input.source}`,summary?`Details: ${summary}`:""].filter(Boolean).join("\n").slice(0,1500);
-  const form=new URLSearchParams({To:toNumber,Body:body}); if(messagingServiceSid) form.set("MessagingServiceSid",messagingServiceSid); else if(fromNumber) form.set("From",fromNumber);
-  const response=await fetch(`https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,{method:"POST",headers:{Authorization:`Basic ${Buffer.from(`${accountSid}:${authToken}`).toString("base64")}`,"Content-Type":"application/x-www-form-urlencoded"},body:form.toString()});
-  if(!response.ok){const errorText=await response.text().catch(()=>"");console.error("Lindsey SMS lead alert failed",response.status,errorText.slice(0,500));}
+async function sendLeadPush(input: { name: string; phone: string; email: string; location: string; source: string; project: string; }) {
+  const token = process.env.PUSHOVER_APP_TOKEN;
+  const user = process.env.PUSHOVER_USER_KEY;
+  const device = process.env.PUSHOVER_DEVICE;
+
+  if (!token || !user) return;
+
+  const summary = input.project.replace(/\s+/g, " ").trim().slice(0, 500);
+  const message = [
+    `${input.name} · ${input.phone}`,
+    input.email,
+    input.location ? `Build location: ${input.location}` : "",
+    `Source: ${input.source}`,
+    summary ? `Details: ${summary}` : "",
+  ].filter(Boolean).join("\n").slice(0, 1024);
+
+  const form = new URLSearchParams({
+    token,
+    user,
+    title: "New Lindsey Homes Lead",
+    message,
+    priority: "0",
+  });
+
+  if (device) form.set("device", device);
+
+  const response = await fetch("https://api.pushover.net/1/messages.json", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: form.toString(),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => "");
+    console.error("Lindsey Pushover lead alert failed", response.status, errorText.slice(0, 500));
+  }
 }
 export async function POST(request: Request) {
   let body: Record<string, unknown>; try{body=await request.json();}catch{return NextResponse.json({message:"Invalid request."},{status:400});}
@@ -24,7 +52,7 @@ export async function POST(request: Request) {
   try{
     const leadResponse=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${apiKey}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[to],reply_to:email,subject,text})});
     if(!leadResponse.ok){const errorText=await leadResponse.text().catch(()=>"");console.error("Lindsey lead alert failed",leadResponse.status,errorText.slice(0,500));return NextResponse.json({message:"The form could not be delivered right now."},{status:502});}
-    try{await sendLeadSms({name,phone,email,location,source,project});}catch(error){console.error("Lindsey SMS lead alert exception",error);}
+    try{await sendLeadPush({name,phone,email,location,source,project});}catch(error){console.error("Lindsey Pushover lead alert exception",error);}
     const firstName=name.split(/\s+/)[0]||name; const acknowledgement=[`Hi ${firstName},`,"","Thanks for reaching out to Lindsey Homes. We received your project information and Whitney will review it directly.",location?`We noted the project location as ${location}.`:"","","If there is anything else you want us to know, just reply to this email.","","Lindsey Homes","817-821-2476"].filter(Boolean).join("\n");
     try{await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${apiKey}`,"Content-Type":"application/json"},body:JSON.stringify({from,to:[email],reply_to:to,subject:"We received your Lindsey Homes inquiry",text:acknowledgement})});}catch{console.error("Lindsey acknowledgement email failed");}
   }catch{return NextResponse.json({message:"The form could not be delivered right now."},{status:502});}
