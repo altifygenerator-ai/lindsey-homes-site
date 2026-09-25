@@ -130,84 +130,6 @@ export const blackwoodGallery: ResidenceSlide[] = [
     "title": "Blackwood Estate"
   },
   {
-    "src": "/residences/blackwood-estate/blackwood-kitchen.webp",
-    "alt": "Blackwood Estate kitchen concept",
-    "eyebrow": "Kitchen",
-    "title": "Kitchen"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-neutral.webp",
-    "alt": "Blackwood Estate neutral primary bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Neutral primary bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-moody.webp",
-    "alt": "Blackwood Estate moody primary bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Moody primary bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-vaulted-marble.webp",
-    "alt": "Blackwood Estate vaulted marble bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Vaulted marble bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-vaulted-olive.webp",
-    "alt": "Blackwood Estate vaulted olive bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Vaulted olive bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-green-double.webp",
-    "alt": "Blackwood Estate double shower primary bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Double shower primary bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-brass-1.webp",
-    "alt": "Blackwood Estate brass and glass bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Brass and glass bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-bath-brass-2.webp",
-    "alt": "Blackwood Estate light brass bath concept",
-    "eyebrow": "Primary Bath",
-    "title": "Light brass bath"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-mudroom-dark.webp",
-    "alt": "Blackwood Estate dark built-in mudroom concept",
-    "eyebrow": "Mudroom",
-    "title": "Dark built-in mudroom"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-mudroom-adventure.webp",
-    "alt": "Blackwood Estate stone and wood mudroom concept",
-    "eyebrow": "Mudroom",
-    "title": "Stone and wood mudroom"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-mudroom-green.webp",
-    "alt": "Blackwood Estate green built-in mudroom concept",
-    "eyebrow": "Mudroom",
-    "title": "Green built-in mudroom"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-great-room-double-sided.webp",
-    "alt": "Blackwood Estate double-sided stone fireplace concept",
-    "eyebrow": "Great Room",
-    "title": "Double-sided stone fireplace"
-  },
-  {
-    "src": "/residences/blackwood-estate/blackwood-great-room-open.webp",
-    "alt": "Blackwood Estate open great room concept",
-    "eyebrow": "Great Room",
-    "title": "Open great room"
-  },
-  {
     "src": "/residences/blackwood-estate/blackwood-floor-plan.webp",
     "alt": "Blackwood Estate preliminary floor plan",
     "eyebrow": "Floor Plan",
@@ -247,6 +169,17 @@ export const designBuckets = {
       "alt": "Bright great room with fireplace, open railing, and dining area",
       "label": "Great Rooms"
     }
+  ,
+    {
+      "src": "/residences/blackwood-estate/blackwood-great-room-double-sided.webp",
+      "alt": "Great room with a double-sided stone fireplace",
+      "label": "Great Rooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-great-room-open.webp",
+      "alt": "Open luxury great room with warm architectural details",
+      "label": "Great Rooms"
+    }
   ],
   "kitchens": [
     {
@@ -279,11 +212,53 @@ export const designBuckets = {
       "alt": "Warm contemporary kitchen and dining space with tall windows and dark cabinetry",
       "label": "Kitchens"
     }
+  ,
+    {
+      "src": "/residences/blackwood-estate/blackwood-kitchen.webp",
+      "alt": "Luxury kitchen with dark cabinetry and statement finishes",
+      "label": "Kitchens"
+    }
   ],
   "bathrooms": [
     {
       "src": "/inspiration/whitney/bathrooms/bath-blue-tile.webp",
       "alt": "Walk-in shower with blue-gray tile and warm wood vanity",
+      "label": "Bathrooms"
+    }
+  ,
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-neutral.webp",
+      "alt": "Neutral luxury primary bathroom",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-moody.webp",
+      "alt": "Moody luxury primary bathroom",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-vaulted-marble.webp",
+      "alt": "Vaulted luxury bathroom with marble finishes",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-vaulted-olive.webp",
+      "alt": "Vaulted luxury bathroom with olive-toned finishes",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-green-double.webp",
+      "alt": "Green-toned primary bathroom with double shower",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-brass-1.webp",
+      "alt": "Primary bathroom with brass and glass details",
+      "label": "Bathrooms"
+    },
+    {
+      "src": "/residences/blackwood-estate/blackwood-bath-brass-2.webp",
+      "alt": "Light primary bathroom with brass fixtures",
       "label": "Bathrooms"
     }
   ],
@@ -303,6 +278,12 @@ export const designBuckets = {
       "alt": "Warm foyer with wood double doors and brick floor detail",
       "label": "Foyers & Mudrooms"
     },
+  ,
+    {
+      "src": "/residences/blackwood-estate/blackwood-mudroom-green.webp",
+      "alt": "Green built-in mudroom with bench, storage, and woven baskets",
+      "label": "Foyers & Mudrooms"
+    }
   ],
   "primaryClosets": [
     {
