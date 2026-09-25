@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { imageDisclaimer, residenceCollection } from "@/data/site";
-import { photos } from "@/data/photos";
+import { blackwoodGallery, photos } from "@/data/photos";
+import { ResidenceGallery } from "@/components/ResidenceGallery";
 
 export function BlackwoodEstateFeature() {
   const [open, setOpen] = useState(false);
@@ -20,25 +21,20 @@ export function BlackwoodEstateFeature() {
           aria-controls="blackwood-expanded"
           onClick={() => setOpen((value) => !value)}
         >
-          <img src={photos.blackwoodPresentation.src} alt={photos.blackwoodPresentation.alt} />
+          <img src={photos.blackwoodExterior.src} alt={photos.blackwoodExterior.alt} />
           <div className="blackwood-preview-shade" aria-hidden="true" />
-
           <div className="blackwood-preview-title">
             <span>Featured Residence</span>
             <strong>Blackwood Estate</strong>
             <small>Luxury Black Farmhouse</small>
           </div>
-
           <div className="blackwood-preview-stats" aria-hidden={open}>
             <span><strong>{residence.totalSqFt}</strong><small>Living</small></span>
             <span><strong>{residence.bedrooms}</strong><small>Bedrooms</small></span>
             <span><strong>{residence.bathrooms}</strong><small>Bathrooms</small></span>
             <span><strong>{residence.garage}</strong><small>Garage</small></span>
           </div>
-
-          <span className="blackwood-preview-action">
-            {open ? "Close residence" : "Explore Blackwood Estate +"}
-          </span>
+          <span className="blackwood-preview-action">{open ? "Close residence" : "Explore Blackwood Estate +"}</span>
         </button>
 
         <div id="blackwood-expanded" className="blackwood-expanded" hidden={!open}>
@@ -49,18 +45,10 @@ export function BlackwoodEstateFeature() {
             </div>
             <button type="button" onClick={() => setOpen(false)}>Close ×</button>
           </div>
-
-          <div className="blackwood-expanded-grid">
-            <figure className="blackwood-plan">
-              <img src={photos.blackwoodFloorPlan.src} alt={photos.blackwoodFloorPlan.alt} loading="lazy" decoding="async" />
-              <figcaption>Preliminary floor plan</figcaption>
-            </figure>
-          </div>
-
+          <ResidenceGallery slides={blackwoodGallery} label="Blackwood Estate image gallery" />
           <div className="blackwood-amenities">
             {residence.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}
           </div>
-
           <p className="blackwood-disclaimer">{imageDisclaimer}</p>
         </div>
       </div>

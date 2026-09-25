@@ -258,3 +258,10 @@
     transition: none;
   }
 }
+
+/* Homepage seven-bucket refinement */
+@media (max-width: 760px) {
+  .visual-gallery-grid--seven { grid-template-columns: 1fr; }
+  .visual-gallery-grid--seven .visual-tile,
+  .visual-gallery-grid--seven .visual-tile--wide { grid-column: auto; min-height: 360px; }
+}

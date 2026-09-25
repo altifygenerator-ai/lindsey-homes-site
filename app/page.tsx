@@ -5,9 +5,10 @@ import { LeadForm } from "@/components/LeadForm";
 import { ReserveFeature } from "@/components/ReserveFeature";
 import { LindseyResidenceFeature } from "@/components/LindseyResidenceFeature";
 import { BlackwoodEstateFeature } from "@/components/BlackwoodEstateFeature";
+import { EliaGroveFeature } from "@/components/EliaGroveFeature";
 import { SignatureSeries } from "@/components/SignatureSeries";
 import { site } from "@/data/site";
-import { photos } from "@/data/photos";
+import { designBuckets } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Custom Home Builder in Dallas–Fort Worth",
@@ -42,6 +43,7 @@ export default function HomePage() {
       <ReserveFeature />
       <LindseyResidenceFeature />
       <BlackwoodEstateFeature />
+      <EliaGroveFeature />
       <SignatureSeries />
 
       <section className="visual-gallery-section">
@@ -49,33 +51,16 @@ export default function HomePage() {
           <span className="eyebrow">Lindsey Homes</span>
           <h2>Luxury, expressed through the details.</h2>
         </div>
-        <div className="shell visual-gallery-grid">
-          <Link className="visual-tile visual-tile--wide" href="/inspiration#interiors">
-            <img src={photos.inspirationGreatRoom.src} alt={photos.inspirationGreatRoom.alt} />
-            <span>Interiors</span>
-          </Link>
-          <Link className="visual-tile" href="/inspiration#kitchens">
-            <img src={photos.inspirationKitchenWhite.src} alt={photos.inspirationKitchenWhite.alt} />
-            <span>Kitchens</span>
-          </Link>
-          <Link className="visual-tile" href="/inspiration#bathrooms">
-            <img src={photos.inspirationBathNeutralSpa.src} alt={photos.inspirationBathNeutralSpa.alt} />
-            <span>Bathrooms</span>
-          </Link>
-          <Link className="visual-tile" href="/inspiration#features">
-            <img src={photos.inspirationFeatureMudroomDark.src} alt={photos.inspirationFeatureMudroomDark.alt} />
-            <span>Features</span>
-          </Link>
-          <Link className="visual-tile" href="/inspiration#entrances">
-            <img src={photos.dallasEntryDetail.src} alt={photos.dallasEntryDetail.alt} />
-            <span>Entrances</span>
-          </Link>
-          <Link className="visual-tile visual-tile--wide" href="/inspiration#outdoor-living">
-            <img src={photos.luxuryOutdoor.src} alt={photos.luxuryOutdoor.alt} />
-            <span>Outdoor Living</span>
-          </Link>
+        <div className="shell visual-gallery-grid visual-gallery-grid--seven">
+          <Link className="visual-tile visual-tile--wide" href="/inspiration#great-rooms"><img src={designBuckets.greatRooms[0].src} alt={designBuckets.greatRooms[0].alt} /><span>Great Rooms</span></Link>
+          <Link className="visual-tile" href="/inspiration#kitchens"><img src={designBuckets.kitchens[0].src} alt={designBuckets.kitchens[0].alt} /><span>Kitchens</span></Link>
+          <Link className="visual-tile" href="/inspiration#bathrooms"><img src={designBuckets.bathrooms[0].src} alt={designBuckets.bathrooms[0].alt} /><span>Bathrooms</span></Link>
+          <Link className="visual-tile visual-tile--wide" href="/inspiration#foyers-mudrooms"><img src={designBuckets.foyersMudrooms[0].src} alt={designBuckets.foyersMudrooms[0].alt} /><span>Foyers &amp; Mudrooms</span></Link>
+          <Link className="visual-tile" href="/inspiration#primary-closets"><img src={designBuckets.primaryClosets[0].src} alt={designBuckets.primaryClosets[0].alt} /><span>Primary Closets</span></Link>
+          <Link className="visual-tile" href="/inspiration#pantry-prep-kitchen"><img src={designBuckets.pantryPrep[0].src} alt={designBuckets.pantryPrep[0].alt} /><span>Pantry / Prep Kitchen</span></Link>
+          <Link className="visual-tile visual-tile--wide" href="/inspiration#features"><img src={designBuckets.features[0].src} alt={designBuckets.features[0].alt} /><span>Features</span></Link>
         </div>
-        <p className="shell visual-gallery-note">Design inspiration imagery is shown to communicate style, materials, and features. Residence concept imagery remains within the individual residence sections.</p>
+        <p className="shell visual-gallery-note">Design inspiration imagery is grouped by room and detail. Named residence imagery stays within each residence section.</p>
       </section>
 
       <section className="home-statement">

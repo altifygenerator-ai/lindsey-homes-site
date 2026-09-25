@@ -1,45 +1,33 @@
-Lindsey Homes — The Lindsey + Signature Series update
+Lindsey Homes — IMAGE OWNERSHIP / BUCKET CORRECTION
 
-Client direction implemented:
-- The Lindsey sits directly under The Reserve on the homepage.
-- The Lindsey uses the supplied exterior and plan imagery, with no public price shown.
-- Oak Ridge and Cedar Grove create a separate Signature Series break directly under The Lindsey.
-- Signature Series wording: "Customized to fit your family."
-- Supplied kitchen and great-room images are used in the homepage feature imagery.
-- The Residence Collection page now includes The Lindsey plus Oak Ridge and Cedar Grove details/floor plans.
-- ResidenceGallery accessibility labels are generalized instead of hard-coded to The Reserve.
-- Existing SEO/canonical, analytics, concierge, and lead automation files are otherwise left alone.
+This is cumulative over the prior client-final overlay.
 
-The supplied image showing an estimated $2,500,000 price was intentionally NOT included because public pricing was previously removed from the site.
+Corrected:
+- Elia Grove now uses ONLY the images from the supplied "elia (2).zip".
+- Blackwood Estate now uses ONLY the images from the supplied "blackwood.zip" plus the already supplied Blackwood exterior/presentation/floor plan.
+- General Whitney images are separated into the requested buckets:
+  Great Rooms
+  Kitchens
+  Bathrooms
+  Foyers & Mudrooms
+  Primary Closets
+  Pantry / Prep Kitchen
+  Features
+- Project-specific Elia and Blackwood images are NOT reused in the general design buckets.
+- Removed all Pexels / outside-stock image references from the code in this overlay.
+- Custom Homes and About now use Whitney-supplied general imagery instead of outside stock.
+- The RENOVATE AI-labeled image (IMG_20260924_161749.jpg) is intentionally excluded.
+- IMG_20260924_202204.png, explicitly requested for deletion, is intentionally excluded.
+- No "Luxury Homes" bucket is restored.
+
+Note:
+Older image files from previous overlays may still physically exist in public/ after extracting this overlay,
+but the corrected code does not reference or render them. This avoids destructive folder deletion while making
+the visible site use only the approved image assignments.
 
 Apply:
-1. Extract the CONTENTS of this ZIP directly over the Lindsey Homes repo root.
+1. Extract the CONTENTS of this ZIP over the repo root.
 2. Run: npm run build
-3. Commit and push if the build passes.
+3. Review locally, then commit/push if it looks right.
 
-This ZIP is repo-relative with no wrapper folder.
-
-
-Blackwood Estate addition:
-- Blackwood Estate sits directly under The Lindsey.
-- Approx. 4,568 sq. ft. living, 5 bedrooms, 4 full + 1 half baths, 3-car side-entry garage.
-- Added the supplied Blackwood presentation and preliminary floor plan.
-- Added Blackwood Estate to the Residence Collection page.
-- Updated concierge knowledge for The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, and the Signature Series.
-
-
-Design inspiration / bucket update:
-- Removed "Luxury Homes" from the homepage design buckets for now.
-- Homepage buckets are now: Interiors, Kitchens, Bathrooms, Features, Outdoor Living.
-- Added all newly supplied interior, kitchen, bathroom, fireplace, mudroom, built-in, and feature imagery as general design inspiration.
-- None of these new inspiration images are attached to The Reserve, The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, or any other residence.
-- Rebuilt /inspiration into dedicated category sections with anchors for each homepage bucket.
-- Kept Outdoor Living using the existing reference image because no new outdoor-living image was supplied in this batch.
-- The visible watermark on the supplied green built-in mudroom image is preserved as provided; the homepage uses a different Features image without that watermark.
-
-
-Entrances update:
-- Added Entrances as a sixth homepage inspiration bucket.
-- Added an Entrances section to /inspiration.
-- Uses the existing general Dallas entry-detail reference image, not imagery tied to any named residence.
-- Homepage buckets are now: Interiors, Kitchens, Bathrooms, Features, Entrances, Outdoor Living.
+The ZIP is repo-relative with no wrapper folder.

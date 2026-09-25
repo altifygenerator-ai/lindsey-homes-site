@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildTypes } from "@/data/site";
 import { ImageSlot } from "@/components/ImageSlot";
 import { ContactBand } from "@/components/ContactBand";
-import { photos } from "@/data/photos";
+import { designBuckets } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Custom Homes & Private Estates in Dallas–Fort Worth",
@@ -26,7 +26,7 @@ export default function CustomHomesPage() {
             <h1>Designed around the property. Built around your life.</h1>
             <Link className="text-link-light" href="/contact">Start a conversation →</Link>
           </div>
-          <ImageSlot className="page-hero-image" src={photos.luxuryExterior.src} alt={photos.luxuryExterior.alt} loading="eager" showLabel={false} />
+          <ImageSlot className="page-hero-image" src={designBuckets.greatRooms[0].src} alt={designBuckets.greatRooms[0].alt} loading="eager" showLabel={false} />
         </div>
       </section>
 
@@ -47,7 +47,7 @@ export default function CustomHomesPage() {
 
       <section className="dark-editorial-section">
         <div className="shell dark-editorial-grid">
-          <ImageSlot aspect="portrait" src={photos.luxuryKitchen.src} alt={photos.luxuryKitchen.alt} showLabel={false} />
+          <ImageSlot aspect="portrait" src={designBuckets.kitchens[0].src} alt={designBuckets.kitchens[0].alt} showLabel={false} />
           <div>
             <span className="eyebrow eyebrow-light">Inside the home</span>
             <h2>Quiet materials. Strong details. Rooms that belong together.</h2>

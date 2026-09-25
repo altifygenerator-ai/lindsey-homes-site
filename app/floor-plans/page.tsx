@@ -4,15 +4,15 @@ import { ImageSlot } from "@/components/ImageSlot";
 import { ContactBand } from "@/components/ContactBand";
 import { ResidenceGallery } from "@/components/ResidenceGallery";
 import { imageDisclaimer, residenceCollection } from "@/data/site";
-import { photos } from "@/data/photos";
+import { blackwoodGallery, eliaGroveGallery, photos } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Residence Collection & Signature Series",
-  description: "Explore The Reserve, The Lindsey, Blackwood Estate, Oak Ridge, Cedar Grove, and the Lindsey Homes residence collection for Dallas–Fort Worth.",
+  description: "Explore The Reserve, The Lindsey, Blackwood Estate, Elia Grove, Oak Ridge, Cedar Grove, and the Lindsey Homes residence collection for Dallas–Fort Worth.",
   alternates: { canonical: "/floor-plans" },
   openGraph: {
     title: "Residence Collection & Signature Series | Lindsey Homes",
-    description: "Explore The Reserve, The Lindsey, Blackwood Estate, and Signature Series residences from Lindsey Homes.",
+    description: "Explore The Reserve, The Lindsey, Blackwood Estate, Elia Grove, and Signature Series residences from Lindsey Homes.",
     url: "/floor-plans",
   },
 };
@@ -21,6 +21,7 @@ export default function FloorPlansPage() {
   const reserve = residenceCollection.find((item) => item.slug === "the-reserve")!;
   const lindsey = residenceCollection.find((item) => item.slug === "the-lindsey")!;
   const blackwood = residenceCollection.find((item) => item.slug === "blackwood-estate")!;
+  const elia = residenceCollection.find((item) => item.slug === "elia-grove")!;
   const oakRidge = residenceCollection.find((item) => item.slug === "oak-ridge")!;
   const cedarGrove = residenceCollection.find((item) => item.slug === "cedar-grove")!;
 
@@ -148,19 +149,15 @@ export default function FloorPlansPage() {
             </div>
           </div>
 
-          <ResidenceGallery
-            label="Blackwood Estate image gallery"
-            slides={[
-              { src: photos.blackwoodPresentation.src, alt: photos.blackwoodPresentation.alt, eyebrow: "Residence", title: "Luxury black farmhouse" },
-              { src: photos.blackwoodFloorPlan.src, alt: photos.blackwoodFloorPlan.alt, eyebrow: "Plan", title: "Approx. 4,568 sq. ft. one-story residence" },
-            ]}
-          />
+          <ResidenceGallery label="Blackwood Estate image gallery" slides={blackwoodGallery} />
 
           <div className="collection-blackwood-amenities">
             {blackwood.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}
           </div>
         </div>
       </section>
+
+      <section className="collection-elia-section"><div className="shell"><div className="collection-elia-heading"><div><span className="eyebrow">The Estate Collection</span><h2>{elia.name}</h2><p>Mediterranean farmhouse architecture with stone, arches, warm materials, and a single-level plan designed around everyday living.</p></div><div className="collection-elia-specs"><span>{elia.totalSqFt}</span><span>{elia.bedrooms}</span><span>{elia.bathrooms}</span><span>{elia.garage}</span></div></div><ResidenceGallery label="Elia Grove image gallery" slides={eliaGroveGallery} /><div className="collection-elia-amenities">{elia.amenities.map((amenity) => <span key={amenity}>{amenity}</span>)}</div></div></section>
 
       <section className="collection-signature-section">
         <div className="shell collection-signature-heading">

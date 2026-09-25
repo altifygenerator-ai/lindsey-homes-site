@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ImageSlot } from "@/components/ImageSlot";
 import { ContactBand } from "@/components/ContactBand";
-import { photos } from "@/data/photos";
+import { designBuckets } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "Custom Home Building Approach in Dallas–Fort Worth",
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <span className="eyebrow eyebrow-light">Our Approach</span>
             <h1>One complete idea, from the property to the last detail.</h1>
           </div>
-          <ImageSlot className="page-hero-image" src={photos.luxuryExterior.src} alt={photos.luxuryExterior.alt} loading="eager" showLabel={false} />
+          <ImageSlot className="page-hero-image" src={designBuckets.foyersMudrooms[0].src} alt={designBuckets.foyersMudrooms[0].alt} loading="eager" showLabel={false} />
         </div>
       </section>
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
       <section className="dark-editorial-section">
         <div className="shell dark-editorial-grid">
-          <ImageSlot aspect="portrait" src={photos.luxuryLiving.src} alt={photos.luxuryLiving.alt} showLabel={false} />
+          <ImageSlot aspect="portrait" src={designBuckets.greatRooms[1].src} alt={designBuckets.greatRooms[1].alt} showLabel={false} />
           <div>
             <span className="eyebrow eyebrow-light">From plan to finish</span>
             <h2>Proportion. Light. Material. Craft.</h2>
