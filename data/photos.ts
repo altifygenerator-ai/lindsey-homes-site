@@ -274,7 +274,7 @@ export const designBuckets = {
       "src": "/inspiration/whitney/foyers-mudrooms/foyer-double-door.webp",
       "alt": "Warm foyer with wood double doors and brick floor detail",
       "label": "Foyers & Mudrooms"
-    },,
+    },
     {
       "src": "/residences/blackwood-estate/blackwood-mudroom-green.webp",
       "alt": "Green built-in mudroom with bench, storage, and woven baskets",
