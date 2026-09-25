@@ -168,8 +168,7 @@ export const designBuckets = {
       "src": "/features/lindsey-feature-great-room.webp",
       "alt": "Bright great room with fireplace, open railing, and dining area",
       "label": "Great Rooms"
-    }
-  ,
+    },
     {
       "src": "/residences/blackwood-estate/blackwood-great-room-double-sided.webp",
       "alt": "Great room with a double-sided stone fireplace",
@@ -211,8 +210,7 @@ export const designBuckets = {
       "src": "/features/lindsey-feature-kitchen.webp",
       "alt": "Warm contemporary kitchen and dining space with tall windows and dark cabinetry",
       "label": "Kitchens"
-    }
-  ,
+    },
     {
       "src": "/residences/blackwood-estate/blackwood-kitchen.webp",
       "alt": "Luxury kitchen with dark cabinetry and statement finishes",
@@ -224,8 +222,7 @@ export const designBuckets = {
       "src": "/inspiration/whitney/bathrooms/bath-blue-tile.webp",
       "alt": "Walk-in shower with blue-gray tile and warm wood vanity",
       "label": "Bathrooms"
-    }
-  ,
+    },
     {
       "src": "/residences/blackwood-estate/blackwood-bath-neutral.webp",
       "alt": "Neutral luxury primary bathroom",
@@ -277,8 +274,7 @@ export const designBuckets = {
       "src": "/inspiration/whitney/foyers-mudrooms/foyer-double-door.webp",
       "alt": "Warm foyer with wood double doors and brick floor detail",
       "label": "Foyers & Mudrooms"
-    },
-  ,
+    },,
     {
       "src": "/residences/blackwood-estate/blackwood-mudroom-green.webp",
       "alt": "Green built-in mudroom with bench, storage, and woven baskets",
