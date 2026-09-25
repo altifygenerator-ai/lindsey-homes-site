@@ -243,21 +243,6 @@ export const designBuckets = {
       "label": "Great Rooms"
     },
     {
-      "src": "/inspiration/whitney/great-rooms/great-room-arched-glass.webp",
-      "alt": "Great room with oversized arched glass and garden views",
-      "label": "Great Rooms"
-    },
-    {
-      "src": "/inspiration/whitney/great-rooms/great-room-indoor-outdoor.webp",
-      "alt": "Indoor-outdoor living space opening to the pool",
-      "label": "Great Rooms"
-    },
-    {
-      "src": "/inspiration/whitney/great-rooms/great-room-sunset-opening.webp",
-      "alt": "Living and dining space opening to a sunset terrace",
-      "label": "Great Rooms"
-    },
-    {
       "src": "/features/lindsey-feature-great-room.webp",
       "alt": "Bright great room with fireplace, open railing, and dining area",
       "label": "Great Rooms"
@@ -318,36 +303,6 @@ export const designBuckets = {
       "alt": "Warm foyer with wood double doors and brick floor detail",
       "label": "Foyers & Mudrooms"
     },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-green-door.webp",
-      "alt": "Exterior entry with green double doors and stone surround",
-      "label": "Foyers & Mudrooms"
-    },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-modern-black-door.webp",
-      "alt": "Modern glass front entry with black metal doors",
-      "label": "Foyers & Mudrooms"
-    },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-wood-arched-door.webp",
-      "alt": "Arched wood double-door entry with stone surround",
-      "label": "Foyers & Mudrooms"
-    },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-floating-stair.webp",
-      "alt": "Foyer with floating wood stair and glass railing",
-      "label": "Foyers & Mudrooms"
-    },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-curved-stair.webp",
-      "alt": "Grand foyer with curved stair and arched opening",
-      "label": "Foyers & Mudrooms"
-    },
-    {
-      "src": "/inspiration/whitney/foyers-mudrooms/foyer-stair-landing.webp",
-      "alt": "Light stair hall with wood treads and black balusters",
-      "label": "Foyers & Mudrooms"
-    }
   ],
   "primaryClosets": [
     {
@@ -512,6 +467,51 @@ export const designBuckets = {
     {
       "src": "/inspiration/whitney/features/range-hood-copper.webp",
       "alt": "Copper range hood over dark cabinetry",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-curved-stair.webp",
+      "alt": "Grand foyer with curved stair and arched opening",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-stair-landing.webp",
+      "alt": "Light stair hall with wood treads and black balusters",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-floating-stair.webp",
+      "alt": "Foyer with floating wood stair and glass railing",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-green-door.webp",
+      "alt": "Exterior entry with green double doors and stone surround",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-modern-black-door.webp",
+      "alt": "Modern glass front entry with black metal doors",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/foyers-mudrooms/foyer-wood-arched-door.webp",
+      "alt": "Arched wood double-door entry with stone surround",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/great-rooms/great-room-sunset-opening.webp",
+      "alt": "Living and dining space opening to a sunset terrace",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/great-rooms/great-room-indoor-outdoor.webp",
+      "alt": "Indoor-outdoor living space opening to the pool",
+      "label": "Features"
+    },
+    {
+      "src": "/inspiration/whitney/great-rooms/great-room-arched-glass.webp",
+      "alt": "Great room with oversized arched glass and garden views",
       "label": "Features"
     }
   ]
