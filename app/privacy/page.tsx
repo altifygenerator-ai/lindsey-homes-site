@@ -39,6 +39,9 @@ export default function PrivacyPage() {
         <h2>Sharing of information</h2>
         <p>Lindsey Homes does not sell, rent, or trade personal information. Information may be shared with trusted service providers only as needed for business operations and to serve the client.</p>
 
+        <h2>SMS opt-in data</h2>
+        <p>We do not sell or share your SMS opt-in data or personal information with third parties for marketing purposes. SMS consent and opt-in information are used only to provide the communications requested and to operate Lindsey Homes communication services.</p>
+
         <h2>Your choices</h2>
         <p>You may ask to access, update, or correct information you have provided, or opt out of communications by contacting Lindsey Homes.</p>
 
