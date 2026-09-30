@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactChoice } from "@/components/ContactChoice";\nimport { HeroSkylineVideo } from "@/components/HeroSkylineVideo";
+import { ContactChoice } from "@/components/ContactChoice";
+import { HeroSkylineVideo } from "@/components/HeroSkylineVideo";
 import { LeadForm } from "@/components/LeadForm";
 import { ReserveFeature } from "@/components/ReserveFeature";
 import { LindseyResidenceFeature } from "@/components/LindseyResidenceFeature";
