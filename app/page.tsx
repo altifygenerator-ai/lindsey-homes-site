@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactChoice } from "@/components/ContactChoice";
+import { ContactChoice } from "@/components/ContactChoice";\nimport { HeroSkylineVideo } from "@/components/HeroSkylineVideo";
 import { LeadForm } from "@/components/LeadForm";
 import { ReserveFeature } from "@/components/ReserveFeature";
 import { LindseyResidenceFeature } from "@/components/LindseyResidenceFeature";
@@ -26,9 +26,7 @@ export default function HomePage() {
     <>
       <section className="panorama-hero home-hero" aria-label="Dallas skyline at dusk and night">
         <img className="panorama-hero-fallback" src="/video/dallas-skyline-hero-poster.jpg" alt="" aria-hidden="true" />
-        <video className="panorama-hero-video" autoPlay muted loop playsInline preload="metadata" poster="/video/dallas-skyline-hero-poster.jpg" aria-hidden="true">
-          <source src="/video/dallas-skyline-hero.mp4" type="video/mp4" />
-        </video>
+        <HeroSkylineVideo />
         <div className="panorama-hero-vignette" aria-hidden="true" />
         <div className="shell home-hero-content">
           <div className="home-hero-copy">
