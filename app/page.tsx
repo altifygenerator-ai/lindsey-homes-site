@@ -81,7 +81,17 @@ export default function HomePage() {
         <div className="shell home-statement-inner">
           <span>Custom Homes · Private Estates · Build on Your Land</span>
           <h2>One home. One clear point of view.</h2>
-          <Link href="/about">Our approach →</Link>
+          <div className="home-statement-links">
+            <Link href="/about">Our approach →</Link>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=North+Texas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Lindsey Homes service area in Google Maps"
+            >
+              View Our Service Area ↗
+            </a>
+          </div>
         </div>
       </section>
 
@@ -162,6 +172,25 @@ export default function HomePage() {
 
         .home-hero-copy .hero-contact-trigger {
           margin-top: 27px;
+        }
+
+        .home-statement-links {
+          margin-top: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 28px;
+          flex-wrap: wrap;
+        }
+
+        .home-statement-links a {
+          margin-top: 0;
+          padding-bottom: 4px;
+          border-bottom: 1px solid rgba(255,255,255,.48);
+          font-size: .7rem;
+          font-weight: 850;
+          letter-spacing: .1em;
+          text-transform: uppercase;
         }
 
         @media (max-width: 680px) {
