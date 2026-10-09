@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 import { site } from "@/data/site";
 
@@ -8,16 +8,29 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const referral = params.get("ref")?.trim().toLowerCase();
+    if (referral) sessionStorage.setItem("lindsey_referral", referral.slice(0, 80));
+  }, []);
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSending(true);
     setStatus("");
 
     const form = event.currentTarget;
+    const params = new URLSearchParams(window.location.search);
+    const referral =
+      params.get("ref")?.trim().toLowerCase() ||
+      sessionStorage.getItem("lindsey_referral") ||
+      "";
+
     const data = {
       ...Object.fromEntries(new FormData(form).entries()),
       source: compact ? "Homepage inquiry form" : "Contact page inquiry form",
       page: window.location.pathname,
+      referral,
     };
 
     try {
@@ -29,7 +42,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       const result = await response.json();
       if (!response.ok) throw new Error(result?.message || "We could not send your inquiry.");
       form.reset();
-      track("Lead Submitted", { location: compact ? "home" : "contact" });
+      track("Lead Submitted", { location: compact ? "home" : "contact", referral: referral || "none" });
       setStatus("Thank you. Whitney will be in touch with you directly.");
     } catch (error) {
       const message = error instanceof Error ? error.message : "We could not send your inquiry.";
@@ -40,7 +53,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <form className={"lead-form" + (compact ? " lead-form--compact" : "")} onSubmit={submit}>
+    <form id="inquiry" className={"lead-form" + (compact ? " lead-form--compact" : "")} onSubmit={submit}>
       <div className="form-intro">
         <span>New home inquiry</span>
         <strong>Tell us what you are planning.</strong>
