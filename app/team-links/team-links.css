@@ -1,0 +1,280 @@
+.team-links-page {
+  min-height: 100vh;
+  background: #f2efe8;
+}
+
+.team-links-hero {
+  padding: 150px 0 72px;
+  background:
+    linear-gradient(180deg, rgba(4,12,20,.2), rgba(4,12,20,.84)),
+    url("/video/dallas-skyline-hero-poster.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+.team-links-hero span,
+.team-links-note strong,
+.referral-work-card__head span,
+.referral-link-box span,
+.business-card-preview__face > span {
+  display: block;
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.team-links-hero span {
+  color: var(--gold-bright);
+}
+
+.team-links-hero h1 {
+  max-width: 820px;
+  margin-top: 8px;
+  font-size: clamp(3rem, 6vw, 6.2rem);
+}
+
+.team-links-hero p {
+  max-width: 720px;
+  margin-top: 18px;
+  color: rgba(255,255,255,.74);
+  line-height: 1.65;
+}
+
+.team-links-section {
+  padding-block: 72px 110px;
+}
+
+.team-links-note {
+  max-width: 920px;
+  margin-bottom: 34px;
+  padding: 22px 24px;
+  border: 1px solid #d8d1c5;
+  background: #fff;
+}
+
+.team-links-note strong {
+  color: #8a6a33;
+}
+
+.team-links-note p {
+  margin-top: 8px;
+  color: #626b74;
+  line-height: 1.65;
+}
+
+.referral-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.referral-work-card {
+  padding: 24px;
+  border: 1px solid #d5cec2;
+  background: #fff;
+}
+
+.referral-work-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e4ddd2;
+}
+
+.referral-work-card__head span {
+  color: #9a7536;
+}
+
+.referral-work-card__head h2 {
+  margin-top: 5px;
+  font-size: clamp(2rem, 3.3vw, 3.2rem);
+}
+
+.referral-work-card__head p {
+  margin-top: 6px;
+  color: #747b82;
+}
+
+.referral-work-card__head code {
+  padding: 6px 9px;
+  background: #f1ede6;
+  color: #35414c;
+  font-size: .72rem;
+}
+
+.business-card-preview {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.business-card-preview__face {
+  min-height: 210px;
+  padding: 22px;
+  border: 1px dashed rgba(227,197,127,.48);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.02), rgba(255,255,255,.09)),
+    #071522;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.business-card-preview__face > span {
+  color: var(--gold-bright);
+}
+
+.business-card-preview__face strong {
+  margin-top: auto;
+  font-family: var(--display);
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.business-card-preview__face small {
+  color: rgba(255,255,255,.58);
+}
+
+.business-card-preview__face em {
+  margin-top: 18px;
+  color: rgba(255,255,255,.38);
+  font-size: .68rem;
+  font-style: normal;
+}
+
+.business-card-preview__face--back {
+  align-items: center;
+  text-align: center;
+}
+
+.business-card-preview__face--back > span {
+  align-self: flex-start;
+}
+
+.qr-placeholder {
+  width: 86px;
+  aspect-ratio: 1;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 8px solid #fff;
+  background:
+    linear-gradient(90deg, #fff 8px, transparent 8px) 0 0 / 18px 18px,
+    linear-gradient(#fff 8px, transparent 8px) 0 0 / 18px 18px,
+    #0c1620;
+}
+
+.qr-placeholder i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 4px solid #fff;
+}
+
+.qr-placeholder i:nth-child(1) { left: 4px; top: 4px; }
+.qr-placeholder i:nth-child(2) { right: 4px; top: 4px; }
+.qr-placeholder i:nth-child(3) { left: 4px; bottom: 4px; }
+
+.qr-placeholder b {
+  position: relative;
+  z-index: 2;
+  padding: 2px 4px;
+  background: #071522;
+  color: var(--gold-bright);
+  font-size: .58rem;
+  letter-spacing: .08em;
+}
+
+.referral-link-box {
+  margin-top: 18px;
+  padding: 14px 15px;
+  background: #f5f2ec;
+  border: 1px solid #e0d9ce;
+}
+
+.referral-link-box span {
+  color: #8d6b35;
+}
+
+.referral-link-box a {
+  display: block;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  color: #243442;
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.referral-card-actions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.referral-card-actions button,
+.referral-card-actions a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.referral-card-actions button {
+  border: 0;
+  background: #061321;
+  color: #fff;
+  cursor: pointer;
+}
+
+.referral-card-actions a {
+  border-bottom: 1px solid #9a7536;
+  color: #273643;
+}
+
+@media (max-width: 900px) {
+  .referral-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .team-links-hero {
+    padding: 124px 0 56px;
+  }
+
+  .team-links-section {
+    padding-block: 52px 76px;
+  }
+
+  .referral-work-card {
+    padding: 18px;
+  }
+
+  .referral-work-card__head {
+    flex-direction: column;
+  }
+
+  .business-card-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .business-card-preview__face {
+    min-height: 195px;
+  }
+
+  .referral-card-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
