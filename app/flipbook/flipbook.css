@@ -1,0 +1,217 @@
+.flipbook-page {
+  min-height: 100vh;
+  background: #f4f1ea;
+}
+
+.flipbook-hero {
+  padding: 150px 0 78px;
+  background:
+    linear-gradient(180deg, rgba(5,13,22,.18), rgba(5,13,22,.9)),
+    url("/video/dallas-skyline-hero-poster.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+.flipbook-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.flipbook-hero__top span,
+.flipbook-sheet__copy span,
+.flipbook-sheet__asset span,
+.flipbook-checklist span {
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.flipbook-hero__top span,
+.flipbook-sheet__copy span {
+  color: var(--gold-bright);
+}
+
+.flipbook-hero__top a {
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  font-size: .68rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.flipbook-hero h1 {
+  max-width: 900px;
+  margin-top: 14px;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+}
+
+.flipbook-hero p {
+  max-width: 760px;
+  margin-top: 20px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.7;
+}
+
+.flipbook-workspace {
+  padding-block: 76px 120px;
+}
+
+.flipbook-checklist {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 60px;
+  padding: 28px;
+  border: 1px solid #d7d0c4;
+  background: #fff;
+}
+
+.flipbook-checklist span {
+  color: #94703a;
+}
+
+.flipbook-checklist h2 {
+  margin-top: 5px;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+.flipbook-checklist ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #5f6870;
+  line-height: 1.8;
+}
+
+.flipbook-pages {
+  margin-top: 34px;
+  display: grid;
+  gap: 20px;
+}
+
+.flipbook-sheet {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: 90px .9fr 1.1fr;
+  gap: 0;
+  border: 1px solid #d7d0c4;
+  background: #fff;
+  overflow: hidden;
+}
+
+.flipbook-sheet__number {
+  padding: 26px 18px;
+  border-right: 1px solid #e4ddd2;
+  color: #a18454;
+  font-family: var(--display);
+  font-size: 2rem;
+}
+
+.flipbook-sheet__copy {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flipbook-sheet__copy h2 {
+  max-width: 520px;
+  margin-top: 8px;
+  font-size: clamp(2.4rem, 4vw, 4.6rem);
+}
+
+.flipbook-sheet__copy p {
+  max-width: 540px;
+  margin-top: 18px;
+  color: #68717a;
+  line-height: 1.7;
+}
+
+.flipbook-sheet__asset {
+  min-height: 430px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-left: 1px solid rgba(227,197,127,.25);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.025), rgba(255,255,255,.09)),
+    #071522;
+  color: #fff;
+}
+
+.flipbook-sheet__asset span {
+  margin-bottom: auto;
+  color: var(--gold-bright);
+}
+
+.flipbook-sheet__asset strong {
+  max-width: 390px;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.flipbook-sheet__asset small {
+  margin-top: 12px;
+  color: rgba(255,255,255,.42);
+  font-size: .72rem;
+}
+
+@media (max-width: 900px) {
+  .flipbook-checklist {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .flipbook-sheet {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .flipbook-sheet__asset {
+    grid-column: 1 / -1;
+    min-height: 300px;
+    border-left: 0;
+    border-top: 1px solid rgba(227,197,127,.25);
+  }
+}
+
+@media (max-width: 620px) {
+  .flipbook-hero {
+    padding: 122px 0 56px;
+  }
+
+  .flipbook-hero__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .flipbook-workspace {
+    padding-block: 52px 78px;
+  }
+
+  .flipbook-checklist {
+    padding: 20px;
+  }
+
+  .flipbook-sheet {
+    grid-template-columns: 1fr;
+  }
+
+  .flipbook-sheet__number {
+    border-right: 0;
+    border-bottom: 1px solid #e4ddd2;
+  }
+
+  .flipbook-sheet__copy {
+    padding: 30px 22px;
+  }
+
+  .flipbook-sheet__asset {
+    grid-column: auto;
+    min-height: 250px;
+    padding: 24px;
+  }
+}
