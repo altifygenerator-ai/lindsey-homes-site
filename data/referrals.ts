@@ -38,5 +38,5 @@ export function getReferralMember(code: string | null | undefined) {
 }
 
 export function getReferralUrl(code: string) {
-  return `https://www.lindseyhomesdfw.com/contact?ref=${encodeURIComponent(code)}#inquiry`;
+  return `https://www.lindseyhomesdfw.com/r/${encodeURIComponent(code)}`;
 }
